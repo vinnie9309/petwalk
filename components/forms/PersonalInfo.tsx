@@ -8,13 +8,13 @@ const PersonalInfo = (props: any) => {
     return (
         <form onSubmit={handleSubmit}>
             <div>
-                <label htmlFor="name">Name</label>
-                <input id="name" />
+                <label className="w-6" htmlFor="name">Name</label>
+                <input className="border rounded mx-5" id="name" />
             </div>
 
             <div>
-                <label htmlFor="password">Password</label>
-                <input id="password" />
+                <label className="w-6" htmlFor="password">Password</label>
+                <input className="border rounded mx-5" id="password" />
             </div>
             <div>
                 <button>Next</button>

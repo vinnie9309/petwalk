@@ -1,4 +1,6 @@
 import './globals.css'
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
 
 export const metadata = {
   title: 'Create Next App',
@@ -10,6 +12,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  config.autoAddCss = false; 
   return (
     <html lang="en">
       <body>{children}</body>

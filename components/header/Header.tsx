@@ -8,7 +8,7 @@ const Header = () => {
             {/* <div className="flex items-center w-full"> */}
                 <div className="ml-0 mr-0"><Image src={logo} alt="pesitter logo" height="120" width="160" /></div>
                 <div className="flex ml-8 mr-0 grow justify-between items-center">
-                    <div className="flex items-center ml-0 mr-0">
+                    <div className="flex items-center ml-0 mr-0 text-lg">
                         <Link href="/" className="mx-2">Home</Link>
                         <Link href="/sitter" className="mx-2">Станете Гледач</Link>
                         <Link href="/sitter" className="mx-2">Намерете Гледач</Link>

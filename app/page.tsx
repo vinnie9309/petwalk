@@ -10,18 +10,19 @@ import {
   faHouseCircleCheck
 } from "@fortawesome/free-solid-svg-icons";
 import './styles.css';
+import Footer from "../components/footer/Footer";
 
 export default function Home() {
   return (
     <>
-      <header className="flex justify-center items-center mb-5 shadow-md w-full sticky">
+      <header className="flex justify-center items-center mb-5 shadow-md w-full fixed  bg-white z-50">
         <Header />
       </header>
       <main className="lg:px-36">
         {/* 1 First Section - Banner */}
         <div className="flex flex-col justify-center items-center py-20">
           <h1 className="text-5xl text-center mb-7">Резервирайте <span className="text-red-500">доверени гледачи и разхождачи</span> които ще се отнасят към вашия домашен любимец като към семейство</h1>
-          <p className="leading-6 opacity-50 mb-7 text-base">Вече повече от 1 000 души използват PetSit.bg за да се грижат за домашните си любимци по време на дните в офиса или при пътувания</p>
+          <p className="leading-6 text-slate-400 mb-7 text-base">Вече повече от 1 000 души използват PetSit.bg за да се грижат за домашните си любимци по време на дните в офиса или при пътувания</p>
           <button className="bg-red-500 text-white p-4 rounded">Намерете гледач</button>
         </div>
         <div className="bg-gray-300 w-full p-8 block absolute left-0"></div>
@@ -90,7 +91,7 @@ export default function Home() {
                       <span className="circle-border mr-3">1</span>
                       <h3 className="text-2xl font-semibold">Кажете ни от какво се нуждаете</h3>
                     </div>
-                    <p className="opacity-50">Помогнете ни да разберем какво търсите, като отговорите на няколко прости въпроса.</p>
+                    <p className="text-slate-400">Помогнете ни да разберем какво търсите, като отговорите на няколко прости въпроса.</p>
                   </div>
                   {/* Section 2 */}
                   <div>
@@ -98,7 +99,7 @@ export default function Home() {
                       <span className="circle-border mr-3">2</span>
                       <h3 className="text-2xl font-semibold">Разгледайте най-добрите си съвпадения</h3>
                     </div>
-                    <p className="opacity-50 max-w-2xl">Сравнете гледачите на домашни любимци близо до вас по отношение на тяхната гъвкавост, цени и опит. След това поговорете с тези, които са ви харесали.</p>
+                    <p className="text-slate-400 max-w-2xl">Сравнете гледачите на домашни любимци близо до вас по отношение на тяхната гъвкавост, цени и опит. След това поговорете с тези, които са ви харесали.</p>
                   </div>
                   {/* Section 3 */}
                   <div>
@@ -106,7 +107,7 @@ export default function Home() {
                       <span className="circle-border mr-3">3</span>
                       <h3 className="text-2xl font-semibold">Наемете най-добрият гледач</h3>
                     </div>
-                    <p className="opacity-50">Насрочете час с избрания от вас гледач на домашни любимци и можете да започнете. Толкова е просто!</p>
+                    <p className="text-slate-400">Насрочете час с избрания от вас гледач на домашни любимци и можете да започнете. Толкова е просто!</p>
                   </div>
                   {/* Section 4 */}
                   <div>
@@ -116,6 +117,8 @@ export default function Home() {
               </div>
             </div>
         </div>
+
+        <Footer />
       </main>
     </>
   )

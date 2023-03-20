@@ -11,6 +11,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import './styles.css';
 import Footer from "../components/footer/Footer";
+import ladyDog from '../public/assets/images/lady-laptop-dog.webp';
+import dollar from '../public/assets/images/icons/dollar-tag.svg';
+import pin from '../public/assets/images/icons/geo-locator.svg';
+import list from '../public/assets/images/icons/list.svg';
 
 export default function Home() {
   return (
@@ -18,7 +22,7 @@ export default function Home() {
       <header className="flex justify-center items-center mb-5 shadow-md w-full fixed  bg-white z-50">
         <Header />
       </header>
-      <main className="lg:px-36">
+      <main className="lg:px-36 lg:mt-24">
         {/* 1 First Section - Banner */}
         <div className="flex flex-col justify-center items-center py-20">
           <h1 className="text-5xl text-center mb-7">Резервирайте <span className="text-red-500">доверени гледачи и разхождачи</span> които ще се отнасят към вашия домашен любимец като към семейство</h1>
@@ -77,7 +81,7 @@ export default function Home() {
         </div>
         {/* 3 Third Section - Steps to hire */}
         <div>
-            <div></div>
+            <div className="bg-red-500 h-1 w-16 m-auto mb-8 rounded"></div>
             <div>
               <h2 className="text-center text-4xl mb-20">Стъпки за наемане на гледач на домашни любимци</h2>
               <div className="flex justify-center">
@@ -111,13 +115,50 @@ export default function Home() {
                   </div>
                   {/* Section 4 */}
                   <div>
-                    <button className="bg-red-500 text-white p-4 rounded">Намерете гледач</button>
+                    <button className="bg-red-500 text-white p-4 rounded mt-5">Намерете гледач</button>
                   </div>
                 </div>
               </div>
             </div>
         </div>
-
+        {/* 4 Line Break Banner */}
+        <div className="bg-gray-300 w-full p-8 mt-12 block absolute left-0 text-white">
+          <h1 className="text-3xl text-center pt-2 mb-7">Резервирайте <span className="text-red-500">доверени гледачи и разхождачи</span> които ще се отнасят към вашия домашен любимец като към семейство</h1>
+        </div>
+        {/* 5 Line Break Banner */}
+        <div className="mt-72">
+          <div>
+            <h1 className="text-center text-4xl mb-20">Нашите предимства</h1>
+            <div className="flex">
+              <div className="flex flex-1 flex-col justify-evenly">
+                <div className="flex">
+                  <Image src={pin} height="60" width="20" alt="geolocation pin icon" />
+                  <div>
+                    <h3>Надеждни гледачи близо до вас</h3>
+                    <p>Вашият домашен любимец е част от семейството ви и това е начинът, по който се отнасяме към него. В нашата платформа ще намерите само надеждни гледачи на домашни любимци, намиращи се близо до вас.</p>
+                  </div>
+                </div>
+                <div className="flex">
+                  <Image src={pin} height="60" width="20" alt="geolocation pin icon" />
+                  <div>
+                    <h3>Лесно намиране на подходящ гледач</h3>
+                    <p>С помощта на различни опции за филтриране и нашата уникална платформа за търсене, ви показваме най-подходящите гледачи на домашни любимци. Независимо дали става дума за космат, пернат или люспест приятел, ние имаме подходящата опция за вас!</p>
+                  </div>
+                </div>
+                <div className="flex">
+                  <Image src={pin} height="60" width="20" alt="geolocation pin icon" />
+                  <div>
+                    <h3>Гледач за всеки повод</h3>
+                    <p>От бърза разходка в парка до едномесечна ваканция - през цялата година можете да намерите подходящ гледач за всеки повод.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex">
+                <Image src={ladyDog} height="1200" width="500" alt="lady on laptop with a dog next to her" />
+              </div>
+            </div>
+          </div>
+        </div>
         <Footer />
       </main>
     </>

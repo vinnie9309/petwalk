@@ -169,37 +169,37 @@ export default function Home() {
           <div className="bg-red-500 h-1 w-60 m-auto mb-8 rounded"></div>
           <p className="text-center mb-10">Какво казват нашите клиенти</p>
           <div className="flex justify-evenly">
-            <div className="flex flex-col items-center bg-red-500 max-w-xs p-10 rounded text-center justify-center">
+            <div className="flex flex-col items-center bg-stone-200 max-w-xs p-10 rounded text-center justify-center">
               <Image src={man} height="120" width="80" alt="man smiling" />
               <div className="w-20 bg-white h-1 rounded mt-4"></div>
               <div className="relative">
                 <FontAwesomeIcon icon={faQuoteLeft} style={{ position: "absolute", left:-30, top: 10, fontSize: 30 }}/>
-                <p className="my-5 text-white">Много добра идея. Ползвал съм сайта три пъти до сега и всеки път си намирах човек много бързо. Препоръчвам ви да гледате ревютата и оценките преди да изберете някой.</p>
+                <p className="my-5">Много добра идея. Ползвал съм сайта три пъти до сега и всеки път си намирах човек много бързо. Препоръчвам ви да гледате ревютата и оценките преди да изберете някой.</p>
                 <FontAwesomeIcon icon={faQuoteRight} style={{ position: "absolute", right: -20, bottom: 10, fontSize: 30 }}/>
               </div>
-              <p className="text-lg text-white font-bold">Борис В.</p>
+              <p className="text-lg font-bold">Борис В.</p>
             </div>
 
-            <div className="flex flex-col items-center bg-red-500 max-w-xs p-10 rounded text-center justify-center">
+            <div className="flex flex-col items-center bg-stone-200 max-w-xs p-10 rounded text-center justify-center">
               <Image src={man2} height="120" width="80" alt="man smiling" />
               <div className="w-20 bg-white h-1 rounded mt-4"></div>
               <div className="relative">
                 <FontAwesomeIcon icon={faQuoteLeft} style={{ position: "absolute", left:-30, top: 10, fontSize: 30 }}/>
-                <p className="my-5 text-white">Наскоро използвахме PetSit за нашата котка и бяхме много впечатлени от услугата. Гледачката беше дружелюбна, професионална и се грижеше отлично за котката ни, докато отсъствахме. Ежедневно си пишехме и ни изпращаше снимки, което беше много приятно. Горещо препоръчваме!</p>
+                <p className="my-5 ">Наскоро използвахме PetSit за нашата котка и бяхме много впечатлени от услугата. Гледачката беше дружелюбна, професионална и се грижеше отлично за котката ни, докато отсъствахме. Ежедневно си пишехме и ни изпращаше снимки, което беше много приятно. Горещо препоръчваме!</p>
                 <FontAwesomeIcon icon={faQuoteRight} style={{ position: "absolute", right: -20, bottom: 10, fontSize: 30 }}/>
               </div>
-              <p className="text-lg text-white font-bold">Виктор Георгиев</p>
+              <p className="text-lg font-bold">Виктор Георгиев</p>
             </div>
 
-            <div className="flex flex-col items-center bg-red-500 max-w-xs p-10 rounded text-center justify-center">
+            <div className="flex flex-col items-center bg-stone-200 max-w-xs p-10 rounded text-center justify-center">
               <Image src={woman} height="120" width="80" alt="woman smiling" />
               <div className="w-20 bg-white h-1 rounded mt-4"></div>
               <div className="relative">
                 <FontAwesomeIcon icon={faQuoteLeft} style={{ position: "absolute", left:-30, top: 10, fontSize: 30 }}/>
-                <p className="my-5 text-white">Страхотен първи опит със сайта. След като пуснах обява получих много отговори и намерих моят гледач много бързо, за голяма радост на моето кученце.</p>
+                <p className="my-5">Страхотен първи опит със сайта. След като пуснах обява получих много отговори и намерих моят гледач много бързо, за голяма радост на моето кученце.</p>
                 <FontAwesomeIcon icon={faQuoteRight} style={{ position: "absolute", right: -20, bottom: 10, fontSize: 30 }}/>
               </div>
-              <p className="text-lg text-white font-bold">Анастасия Рускова</p>
+              <p className="text-lg font-bold">Анастасия Рускова</p>
             </div>
           </div>
         </div>

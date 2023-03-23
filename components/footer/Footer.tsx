@@ -9,12 +9,12 @@ const Footer = () => {
                 <Image src={logo} height="120" width="160" alt="petsit logo" />
             </div>
 
-            <div className='flex flex-col'>
+            <div className='flex flex-col justify-evenly'>
                <h3 className='text-xl font-semibold'>Услуги</h3> 
                <Link href="/">Намерете гледач</Link>
             </div>
 
-            <div className='flex flex-col'>
+            <div className='flex flex-col justify-evenly'>
                 <h3 className='text-xl font-semibold'>За PetSit</h3>
                 <Link href="/">За нас</Link>
                 <Link href="/">Условия на ползване</Link>
@@ -22,7 +22,7 @@ const Footer = () => {
                 <Link href="/">Настройки на бисквитки</Link>
             </div>
 
-            <div className='flex flex-col'>
+            <div className='flex flex-col justify-evenly'>
                 <h3 className='text-xl font-semibold'>Поддръжка</h3>
                 <Link href="/">Свържете се с нас</Link>
                 <Link href="/">Помощен център</Link>

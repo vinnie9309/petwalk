@@ -7,14 +7,19 @@ import {
   faHouseChimneyUser,
   faPaw,
   faShieldDog,
-  faHouseCircleCheck
+  faHouseCircleCheck,
+  faQuoteLeft,
+  faQuoteRight
 } from "@fortawesome/free-solid-svg-icons";
 import './styles.css';
 import Footer from "../components/footer/Footer";
 import ladyDog from '../public/assets/images/lady-laptop-dog.webp';
 import dollar from '../public/assets/images/icons/dollar-tag.svg';
 import pin from '../public/assets/images/icons/geo-locator.svg';
-import list from '../public/assets/images/icons/list.svg';
+import list from '../public/assets/images/icons/list.png';
+import man from '../public/assets/images/man-1.png';
+import man2 from '../public/assets/images/man-2.png';
+import woman from '../public/assets/images/woman.png';
 
 export default function Home() {
   return (
@@ -22,18 +27,17 @@ export default function Home() {
       <header className="flex justify-center items-center mb-5 shadow-md w-full fixed  bg-white z-50">
         <Header />
       </header>
-      <main className="lg:px-36 lg:mt-24">
+      <main className="lg:px-36 lg:mt-24 px-8">
         {/* 1 First Section - Banner */}
         <div className="flex flex-col justify-center items-center py-20">
-          <h1 className="text-5xl text-center mb-7">Резервирайте <span className="text-red-500">доверени гледачи и разхождачи</span> които ще се отнасят към вашия домашен любимец като към семейство</h1>
+          <h1 className="text-3xl lg:text-5xl text-center mb-7">Резервирайте <span className="text-red-500">доверени гледачи и разхождачи</span> които ще се отнасят към вашия домашен любимец като към семейство</h1>
           <p className="leading-6 text-slate-400 mb-7 text-base">Вече повече от 1 000 души използват PetSit.bg за да се грижат за домашните си любимци по време на дните в офиса или при пътувания</p>
           <button className="bg-red-500 text-white p-4 rounded">Намерете гледач</button>
         </div>
         <div className="bg-gray-300 w-full p-8 block absolute left-0"></div>
         {/* 2 Second Section - Services */}
         <h1 className="text-center text-4xl mt-24 mb-12">Услуги за всяко куче</h1>
-        <p>.</p>
-        <div className="flex mb-10 justify-evenly">
+        <div className="flex mb-10 justify-evenly flex-col lg:flex-row">
           <div className="left-col">
             <div className="flex items-center col-xs-12 col-sm-6 mb-7 max-w-xl">
               <i className="fa-solid fa-house-chimney"></i>
@@ -84,11 +88,11 @@ export default function Home() {
             <div className="bg-red-500 h-1 w-16 m-auto mb-8 rounded"></div>
             <div>
               <h2 className="text-center text-4xl mb-20">Стъпки за наемане на гледач на домашни любимци</h2>
-              <div className="flex justify-center">
+              <div className="flex flex-col justify-center lg:flex-row">
                 <div>
                   <Image src={CatWoman} height="1024" width="500" alt="woman holding cat" />
                 </div>
-                <div className="flex flex-col justify-evenly ml-16">
+                <div className="flex flex-col mt-8 justify-evenly lg:ml-16">
                   {/* Section 1 */}
                   <div>
                     <div className="flex items-center mb-3">
@@ -125,28 +129,28 @@ export default function Home() {
         <div className="bg-gray-300 w-full p-8 mt-12 block absolute left-0 text-white">
           <h1 className="text-3xl text-center pt-2 mb-7">Резервирайте <span className="text-red-500">доверени гледачи и разхождачи</span> които ще се отнасят към вашия домашен любимец като към семейство</h1>
         </div>
-        {/* 5 Line Break Banner */}
+        {/* 5 Our advantages */}
         <div className="mt-72">
           <div>
             <h1 className="text-center text-4xl mb-20">Нашите предимства</h1>
-            <div className="flex">
-              <div className="flex flex-1 flex-col justify-evenly">
-                <div className="flex">
-                  <Image src={pin} height="60" width="20" alt="geolocation pin icon" />
+            <div className="flex flex-col lg:flex-row">
+              <div className="flex flex-1 flex-col justify-evenly pr-20">
+                <div className="flex border-b-2 pb-5">
+                  <Image src={pin} height="60" width="40" alt="geolocation pin icon" className="mr-5" />
                   <div>
                     <h3>Надеждни гледачи близо до вас</h3>
                     <p>Вашият домашен любимец е част от семейството ви и това е начинът, по който се отнасяме към него. В нашата платформа ще намерите само надеждни гледачи на домашни любимци, намиращи се близо до вас.</p>
                   </div>
                 </div>
-                <div className="flex">
-                  <Image src={pin} height="60" width="20" alt="geolocation pin icon" />
+                <div className="flex border-b-2 pb-5">
+                  <Image src={dollar} height="60" width="40" alt="geolocation pin icon" className="mr-5" />
                   <div>
                     <h3>Лесно намиране на подходящ гледач</h3>
                     <p>С помощта на различни опции за филтриране и нашата уникална платформа за търсене, ви показваме най-подходящите гледачи на домашни любимци. Независимо дали става дума за космат, пернат или люспест приятел, ние имаме подходящата опция за вас!</p>
                   </div>
                 </div>
-                <div className="flex">
-                  <Image src={pin} height="60" width="20" alt="geolocation pin icon" />
+                <div className="flex border-b-2 pb-5">
+                  <Image src={list} height="60" width="40" alt="list icon" className="mr-5" />
                   <div>
                     <h3>Гледач за всеки повод</h3>
                     <p>От бърза разходка в парка до едномесечна ваканция - през цялата година можете да намерите подходящ гледач за всеки повод.</p>
@@ -156,6 +160,46 @@ export default function Home() {
               <div className="flex">
                 <Image src={ladyDog} height="1200" width="500" alt="lady on laptop with a dog next to her" />
               </div>
+            </div>
+          </div>
+        </div>
+        {/* 6 Testimonials */}
+        <div className="mt-20">
+          <h1 className="text-xl text-center mb-5">ОТЗИВИ</h1>
+          <div className="bg-red-500 h-1 w-60 m-auto mb-8 rounded"></div>
+          <p className="text-center mb-10">Какво казват нашите клиенти</p>
+          <div className="flex justify-evenly">
+            <div className="flex flex-col items-center bg-red-500 max-w-xs p-10 rounded text-center justify-center">
+              <Image src={man} height="120" width="80" alt="man smiling" />
+              <div className="w-20 bg-white h-1 rounded mt-4"></div>
+              <div className="relative">
+                <FontAwesomeIcon icon={faQuoteLeft} style={{ position: "absolute", left:-30, top: 10, fontSize: 30 }}/>
+                <p className="my-5 text-white">Много добра идея. Ползвал съм сайта три пъти до сега и всеки път си намирах човек много бързо. Препоръчвам ви да гледате ревютата и оценките преди да изберете някой.</p>
+                <FontAwesomeIcon icon={faQuoteRight} style={{ position: "absolute", right: -20, bottom: 10, fontSize: 30 }}/>
+              </div>
+              <p className="text-lg text-white font-bold">Борис В.</p>
+            </div>
+
+            <div className="flex flex-col items-center bg-red-500 max-w-xs p-10 rounded text-center justify-center">
+              <Image src={man2} height="120" width="80" alt="man smiling" />
+              <div className="w-20 bg-white h-1 rounded mt-4"></div>
+              <div className="relative">
+                <FontAwesomeIcon icon={faQuoteLeft} style={{ position: "absolute", left:-30, top: 10, fontSize: 30 }}/>
+                <p className="my-5 text-white">Наскоро използвахме PetSit за нашата котка и бяхме много впечатлени от услугата. Гледачката беше дружелюбна, професионална и се грижеше отлично за котката ни, докато отсъствахме. Ежедневно си пишехме и ни изпращаше снимки, което беше много приятно. Горещо препоръчваме!</p>
+                <FontAwesomeIcon icon={faQuoteRight} style={{ position: "absolute", right: -20, bottom: 10, fontSize: 30 }}/>
+              </div>
+              <p className="text-lg text-white font-bold">Виктор Георгиев</p>
+            </div>
+
+            <div className="flex flex-col items-center bg-red-500 max-w-xs p-10 rounded text-center justify-center">
+              <Image src={woman} height="120" width="80" alt="woman smiling" />
+              <div className="w-20 bg-white h-1 rounded mt-4"></div>
+              <div className="relative">
+                <FontAwesomeIcon icon={faQuoteLeft} style={{ position: "absolute", left:-30, top: 10, fontSize: 30 }}/>
+                <p className="my-5 text-white">Страхотен първи опит със сайта. След като пуснах обява получих много отговори и намерих моят гледач много бързо, за голяма радост на моето кученце.</p>
+                <FontAwesomeIcon icon={faQuoteRight} style={{ position: "absolute", right: -20, bottom: 10, fontSize: 30 }}/>
+              </div>
+              <p className="text-lg text-white font-bold">Анастасия Рускова</p>
             </div>
           </div>
         </div>

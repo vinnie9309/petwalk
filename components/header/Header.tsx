@@ -17,7 +17,7 @@ const Header = () => {
                     </div>
                     <div className="flex items-center mr-0 ml-2">
                         <Link href="/sitter">Вход</Link>
-                        <Link href="/sitter" className="bg-red-500 text-white px-4 py-2 rounded ml-5">Регистрация</Link>
+                        <Link href="/register" className="bg-red-500 text-white px-4 py-2 rounded ml-5">Регистрация</Link>
                     </div>
                 </div>
             {/* </div> */}

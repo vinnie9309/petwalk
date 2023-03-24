@@ -1,5 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { createSlice } from "@reduxjs/toolkit/dist/createSlice";
+import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 const dataSlice = createSlice({
     name: 'dataStore',
@@ -18,5 +17,5 @@ export const store = configureStore({
     }
 });
  
-export const { storeData } = dataSlice.actions;
+export const storeActions  = dataSlice.actions;
 export default store;

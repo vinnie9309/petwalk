@@ -1,8 +1,8 @@
 const RegisterLayout = ({children}: any) => {
     return (
-        <div>
+        <>
             {children}
-        </div>
+        </>
     )
 }
 

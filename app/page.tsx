@@ -1,5 +1,5 @@
 import Header from "../components/header/Header";
-import CatWoman from '../public/assets/images/woman-cat.webp';
+import dogWoman from '../public/assets/images/home-first.png';
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -13,7 +13,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import './styles.css';
 import Footer from "../components/footer/Footer";
-import ladyDog from '../public/assets/images/lady-laptop-dog.webp';
+import ladyDog from '../public/assets/images/home-second.png';
 import dollar from '../public/assets/images/icons/dollar-tag.svg';
 import pin from '../public/assets/images/icons/geo-locator.svg';
 import list from '../public/assets/images/icons/list.png';
@@ -90,7 +90,7 @@ export default function Home() {
               <h2 className="text-center text-4xl mb-20">Стъпки за наемане на гледач на домашни любимци</h2>
               <div className="flex flex-col justify-center lg:flex-row">
                 <div>
-                  <Image src={CatWoman} height="1024" width="500" alt="woman holding cat" />
+                  <Image src={dogWoman} height="1024" width="500" alt="woman hugging a dog" />
                 </div>
                 <div className="flex flex-col mt-8 justify-evenly lg:ml-16">
                   {/* Section 1 */}
@@ -130,7 +130,7 @@ export default function Home() {
           <h1 className="text-3xl text-center pt-2 mb-7">Резервирайте <span className="text-red-500">доверени гледачи и разхождачи</span> които ще се отнасят към вашия домашен любимец като към семейство</h1>
         </div>
         {/* 5 Our advantages */}
-        <div className="mt-72">
+        <div className="lg:mt-64 mt-96">
           <div>
             <h1 className="text-center text-4xl mb-20">Нашите предимства</h1>
             <div className="flex flex-col lg:flex-row">
@@ -149,8 +149,8 @@ export default function Home() {
                     <p>С помощта на различни опции за филтриране и нашата уникална платформа за търсене, ви показваме най-подходящите гледачи на домашни любимци. Независимо дали става дума за космат, пернат или люспест приятел, ние имаме подходящата опция за вас!</p>
                   </div>
                 </div>
-                <div className="flex border-b-2 pb-5">
-                  <Image src={list} height="60" width="40" alt="list icon" className="mr-5" />
+                <div className="flex items-center border-b-2 pb-5">
+                  <Image src={list} alt="list icon" className="mr-5 h-14 w-auto" />
                   <div>
                     <h3>Гледач за всеки повод</h3>
                     <p>От бърза разходка в парка до едномесечна ваканция - през цялата година можете да намерите подходящ гледач за всеки повод.</p>
@@ -168,8 +168,8 @@ export default function Home() {
           <h1 className="text-xl text-center mb-5">ОТЗИВИ</h1>
           <div className="bg-red-500 h-1 w-60 m-auto mb-8 rounded"></div>
           <p className="text-center mb-10">Какво казват нашите клиенти</p>
-          <div className="flex justify-evenly">
-            <div className="flex flex-col items-center bg-stone-200 max-w-xs p-10 rounded text-center justify-center">
+          <div className="flex flex-col items-center lg:justify-evenly lg:flex-row">
+            <div className="flex flex-col items-center bg-stone-200 max-w-xs p-10 rounded text-center justify-center mb-5">
               <Image src={man} height="120" width="80" alt="man smiling" />
               <div className="w-20 bg-white h-1 rounded mt-4"></div>
               <div className="relative">
@@ -180,7 +180,7 @@ export default function Home() {
               <p className="text-lg font-bold">Борис В.</p>
             </div>
 
-            <div className="flex flex-col items-center bg-stone-200 max-w-xs p-10 rounded text-center justify-center">
+            <div className="flex flex-col items-center bg-stone-200 max-w-xs p-10 rounded text-center justify-center mb-5">
               <Image src={man2} height="120" width="80" alt="man smiling" />
               <div className="w-20 bg-white h-1 rounded mt-4"></div>
               <div className="relative">
@@ -191,7 +191,7 @@ export default function Home() {
               <p className="text-lg font-bold">Виктор Георгиев</p>
             </div>
 
-            <div className="flex flex-col items-center bg-stone-200 max-w-xs p-10 rounded text-center justify-center">
+            <div className="flex flex-col items-center bg-stone-200 max-w-xs p-10 rounded text-center justify-center mb-5">
               <Image src={woman} height="120" width="80" alt="woman smiling" />
               <div className="w-20 bg-white h-1 rounded mt-4"></div>
               <div className="relative">

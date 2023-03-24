@@ -20,7 +20,7 @@ const FormContiner = () => {
     }
 
     return (
-        <div className="px-20 py-10 shadow-xl">
+        <div className="px-10 py-10 shadow-xl w-100">
             <div className="flex justify-center">
                 <Image src={logo} height="160" width="120" alt="site logo" />
             </div>

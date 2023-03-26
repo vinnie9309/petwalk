@@ -24,7 +24,7 @@ import woman from '../public/assets/images/woman.png';
 export default function Home() {
   return (
     <>
-      <header className="flex justify-center items-center mb-5 shadow-md w-full fixed  bg-white z-50">
+      <header className="flex justify-center items-center mb-5 shadow-md w-full fixed  bg-white z-50 top-0">
         <Header />
       </header>
       <main className="lg:px-36 lg:mt-24 px-8">

@@ -24,7 +24,6 @@ const FormContiner = () => {
             <div className="flex justify-center">
                 <Image src={logo} height="160" width="120" alt="site logo" />
             </div>
-            <h1 className="text-2xl text-center mb-5">What are you looking for?</h1>
             { formStep === 0 && <RegisterOpitons handleData={handlePersonalData} nextFormStep={nextFormStep} />  }
             { formStep === 1 && <PersonalInfo handleData={handlePersonalData} nextFormStep={nextFormStep} />  }
             { formStep === 2 && <ContactInfo nextFormStep={nextFormStep} /> }

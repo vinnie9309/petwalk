@@ -4,13 +4,16 @@ import { useState } from "react";
 const PersonalInfo = (props: any) => {
     const [ nameVal, setNameVal ] = useState('');
     const [ passVal, setPassVal ] = useState('');
+    const [ nextDisabled, setNextDisabled ] = useState(true);
     
     const handleNameVal = (event: any) => {
         setNameVal(event.target.value);
+        setNextDisabled(event.target.value.length === 0);
     }
     
     const handlePassVal = ( event: any ) => {
         setPassVal(event.target.value);
+        setNextDisabled(event.target.value.length === 0);
     }
 
     const handleSubmit = (event: any) => {
@@ -27,15 +30,15 @@ const PersonalInfo = (props: any) => {
             <h1 className="text-2xl text-center mb-5">Personal information</h1>
             <div className="flex flex-col">
                 <label className="w-6" htmlFor="name">Name</label>
-                <input onChange={handleNameVal} className="border rounded py-2 pl-3" id="name" />
+                <input onChange={handleNameVal} value={nameVal} className="border rounded py-2 pl-3" id="name" />
             </div>
 
             <div className="flex flex-col">
                 <label className="w-6" htmlFor="password">Password</label>
-                <input onChange={handlePassVal} type="password" className="border rounded py-2" id="password" />
+                <input onChange={handlePassVal} type="password" className="border rounded py-2 pl-3" id="password" />
             </div>
             <div className="flex w-full">
-                <button type="submit" className="bg-red-400 p-4 w-full text-white mt-4 rounded">Next</button>
+                <button disabled={ nextDisabled } className={`bg-red-400 p-4 w-full text-white mt-4 rounded ${nextDisabled ? 'disabled' : ''}`}>Next</button>
             </div>
         </form>
     )

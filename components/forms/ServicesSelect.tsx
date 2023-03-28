@@ -35,7 +35,6 @@ const ServicesSelect = (props: any) => {
     return (
         <form onSubmit={handleSubmit}>
             <h1 className="text-2xl text-center mb-8">Услуги от които се заинтересовани</h1>
-
             <div className="flex mb-5 items-center">
                 <span>
                     <FontAwesomeIcon icon={ !selected.walk ? faCircle : faCircleCheck} style={{ fontSize: 30, color: "#EF4444" }}/>

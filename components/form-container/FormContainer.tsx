@@ -9,6 +9,7 @@ import RegisterOpitons from "../forms/RegisterOptions";
 import { useDispatch } from "react-redux";
 import { storeActions } from "../../app/store/store";
 import ServicesSelect from "../forms/ServicesSelect";
+import DailyRate from "../forms/DailyRate";
 
 const FormContiner = () => {
     const [ formStep, setFormStep ] = useState(0);
@@ -29,6 +30,7 @@ const FormContiner = () => {
             { formStep === 1 && <PersonalInfo handleData={handlePersonalData} nextFormStep={nextFormStep} />  }
             { formStep === 2 && <ContactInfo handleData={handlePersonalData} nextFormStep={nextFormStep} /> }
             { formStep === 3 && <ServicesSelect handleData={handlePersonalData} nextFormStep={nextFormStep} /> }
+            { formStep === 4 && <DailyRate handleData={handlePersonalData} nextFormStep={nextFormStep} /> }
         </div>
     )
 }

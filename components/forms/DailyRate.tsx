@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const DailyRate = (props: any) => {
-    const [ rateVal, setRateVal ] = useState('')
+    const [ rateVal, setRateVal ] = useState('');
     const [ rateOption, setRateOption ] = useState('');
     const [ nextDisabled, setNextDisabled ] = useState(true);
 
@@ -12,7 +12,7 @@ const DailyRate = (props: any) => {
 
     const handleSelect = (event: any) => {
         setRateOption(event.target.value);
-        console.log(event.target.value);    }
+    }
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();

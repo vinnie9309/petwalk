@@ -22,7 +22,7 @@ const ContactInfo = (props: any) => {
         props.handleData({
             mailVal,
             phoneVal
-        })
+        });
     }
 
     return (

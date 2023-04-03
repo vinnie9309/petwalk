@@ -1,10 +1,12 @@
 'use client';
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const PersonalInfo = (props: any) => {
     const [ nameVal, setNameVal ] = useState('');
     const [ passVal, setPassVal ] = useState('');
     const [ nextDisabled, setNextDisabled ] = useState(true);
+    const router = useRouter();
     
     const handleNameVal = (event: any) => {
         setNameVal(event.target.value);
@@ -16,9 +18,13 @@ const PersonalInfo = (props: any) => {
         setNextDisabled(event.target.value.length === 0);
     }
 
+    const handleContinue = () => {
+        props.nextFormStep();
+        // router.push('/register/contactInfo');
+    }
+
     const handleSubmit = (event: any) => {
         event.preventDefault();
-        props.nextFormStep();
         props.handleData({
             nameVal,
             passVal
@@ -38,7 +44,7 @@ const PersonalInfo = (props: any) => {
                 <input onChange={handlePassVal} type="password" className="border rounded py-2 pl-3" id="password" />
             </div>
             <div className="flex w-full">
-                <button disabled={ nextDisabled } className={`bg-red-400 p-4 w-full text-white mt-4 rounded ${nextDisabled ? 'disabled' : ''}`}>Next</button>
+                <button onClick={handleContinue} disabled={ nextDisabled } className={`bg-red-400 p-4 w-full text-white mt-4 rounded ${nextDisabled ? 'disabled' : ''}`}>Напред</button>
             </div>
         </form>
     )

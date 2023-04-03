@@ -21,10 +21,13 @@ const RegisterOpitons = (props: any) => {
         setClickedSitter( false );
         setNextDisabled(false);
     } 
+
+    const handleContinue = () => {
+        props.nextFormStep();
+    }
     
     const handleSubmit = ( event: any ) => {
         event.preventDefault();
-        props.nextFormStep();
         props.handleData({
             sitterOption
         });
@@ -43,7 +46,7 @@ const RegisterOpitons = (props: any) => {
                 <label className={`block w-full py-2 pl-5 cursor-pointer border-2 border-black rounded mb-8 ${ clickedOwner ? 'border-red-500' : '' } `} htmlFor="LFsitter">I am looking for pet sitters</label>
             </div>
             <div className="flex w-full">
-                <button disabled={ nextDisabled } className={`bg-red-400 p-4 w-full text-white mt-4 rounded  ${ nextDisabled ? 'disabled' : '' }`}>Next</button>
+                <button onClick={handleContinue} className={`bg-red-400 p-4 w-full text-white mt-4 rounded  ${ nextDisabled ? 'disabled' : '' }`}>Напред</button>
             </div>
         </form>
     )   

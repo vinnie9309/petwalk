@@ -2,10 +2,13 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 const dataSlice = createSlice({
     name: 'dataStore',
-    initialState: { data: [] },
+    initialState: { data: [], step: 0 },
     reducers: {
         storeData(state) {
             console.log(state);
+        },
+        nextStep(state) {
+            state.step = state.step + 1;
         }
     }
 });

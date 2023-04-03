@@ -1,18 +1,12 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faCircle, faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from 'next/navigation';
 
 const ServicesSelect = (props: any) => {
     const [ selectedService, setSelectedService ] = useState([]);
     const [ selected, setSelected ] = useState({ walk: false, ownerHome: false, walkerHome: false, dayCare: false });
-
-    const handleSubmit = (event: any) => {
-        event.preventDefault();
-        props.nextFormStep();
-        props.handleData({
-            selectedService
-        });
-    }
+    const router = useRouter();
 
     const handleCheck = (event: any) => {
         setSelectedService(prevValue => prevValue.concat(event.target.value));
@@ -30,6 +24,18 @@ const ServicesSelect = (props: any) => {
                 setSelected( prevVal => ({...prevVal, dayCare: !prevVal.dayCare}) )
                 break;
         }
+    }
+
+    const handleContinue = () => {
+        // router.push('/register/dailyRate');
+        props.nextFormStep();
+    }
+
+    const handleSubmit = (event: any) => {
+        event.preventDefault();
+        props.handleData({
+            selectedService
+        });
     }
 
     return (
@@ -67,7 +73,7 @@ const ServicesSelect = (props: any) => {
                 <input type="checkbox" id="dayCare" name="dayCare" value="dayCare" onChange={handleCheck} className="opacity-0" />
             </div>
             <div className="flex w-full">
-                <button className={`bg-red-400 p-4 w-full text-white mt-4 rounded`}>Next</button>
+                <button onClick={handleContinue} className={`bg-red-400 p-4 w-full text-white mt-4 rounded`}>Напред</button>
             </div>
         </form>
     )

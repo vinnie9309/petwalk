@@ -1,10 +1,12 @@
 'use client';
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const ContactInfo = (props: any) => {
     const [ mailVal, setMailVal ] = useState('')
     const [ phoneVal, setPhoneVal ] = useState('');
     const [ nextDisabled, setNextDisabled ] = useState(true);
+    const router = useRouter();
 
     const handleMailVal = (event: any) => {
         setMailVal(event.target.value);
@@ -16,9 +18,13 @@ const ContactInfo = (props: any) => {
         setNextDisabled(event.target.value === 0);
     }
 
+    const handleContinue = () => {
+        props.nextFormStep();
+        // router.push('/register/serviceSelect');
+    }
+
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        props.nextFormStep();
         props.handleData({
             mailVal,
             phoneVal
@@ -38,7 +44,7 @@ const ContactInfo = (props: any) => {
                 <input onChange={handlePhoneVal} className="border rounded py-2 pl-3" id="phone" />
             </div>
             <div className="flex w-full">
-                <button disabled={ nextDisabled } className={`bg-red-400 p-4 w-full text-white mt-4 rounded ${nextDisabled ? 'disabled' : ''}`}>Next</button>
+                <button onClick={handleContinue} disabled={ nextDisabled } className={`bg-red-400 p-4 w-full text-white mt-4 rounded ${nextDisabled ? 'disabled' : ''}`}>Напред</button>
             </div>
         </form>
     )

@@ -16,7 +16,7 @@ const Header = () => {
                 </div>
                 <div className="flex items-center mr-0 ml-2">
                     <Link href="/sitter" className="nav-link relative mx-2">Вход</Link>
-                    <Link href="/register" className="bg-red-500 text-white px-4 py-2 rounded ml-5">Регистрация</Link>
+                    <Link href="/register/regOptions" className="bg-red-500 text-white px-4 py-2 rounded ml-5">Регистрация</Link>
                 </div>
             </div>
         </nav>

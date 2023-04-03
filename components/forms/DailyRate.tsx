@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 
 const DailyRate = (props: any) => {
     const [ rateVal, setRateVal ] = useState('');
     const [ rateOption, setRateOption ] = useState('');
     const [ nextDisabled, setNextDisabled ] = useState(true);
-    const router = useRouter();
 
     const handleRate = (event: any) => {
         setNextDisabled(event.target.value.length === 0)
@@ -16,13 +14,9 @@ const DailyRate = (props: any) => {
         setRateOption(event.target.value);
     }
 
-    const handleContinue = () => {
-        // router.push('/register/uploadImg');
-        props.nextFormStep();
-    }
-
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        props.nextFormStep();
         props.handleData({
             rateVal,
             rateOption
@@ -50,7 +44,7 @@ const DailyRate = (props: any) => {
             </div>
             <p className="mb-5 text-slate-500">It’s ok if aren’t sure about the rate, add an approximate one. You can always change it later.</p>
             <div className="flex w-full">
-                <button onClick={handleContinue} disabled={ nextDisabled } className={`bg-red-400 p-4 w-full text-white text-xl mt-4 rounded ${nextDisabled ? 'disabled' : ''}`}>Напред</button>
+                <button disabled={ nextDisabled } className={`bg-red-400 p-4 w-full text-white text-xl mt-4 rounded ${nextDisabled ? 'disabled' : ''}`}>Напред</button>
             </div>
         </form>
     )

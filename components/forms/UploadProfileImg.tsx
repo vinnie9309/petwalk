@@ -3,20 +3,13 @@ import man2 from '../../public/assets/images/man-2.png';
 import woman from '../../public/assets/images/woman.png';
 import Image from "next/image";
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 
 const UploadProfileImg = (props: any) => {
     const [ selectedImg, setSelectedImg ] = useState(null);
     const [ nextDisabled, setNextDisabled ] = useState(true);
-    const router = useRouter();
 
     const selectImage = (event: any) => {
         setSelectedImg(event.target.files);
-        // router.push('/register/description');
-    }
-    
-    const uploadToServer = (event: any) => {
-        console.log(event);
     }
     
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -46,7 +39,7 @@ const UploadProfileImg = (props: any) => {
             </div>
             <div className="flex flex-col w-full">
                 <input type="file" name="myImage" onChange={selectImage} className="mb-5" />
-                <button className="bg-red-400 p-4 w-full text-white text-xl mt-4 rounded" onClick={uploadToServer}>Добави снимка</button>
+                <button className="bg-red-400 p-4 w-full text-white text-xl mt-4 rounded">Добави снимка</button>
             </div>
         </form>
     )

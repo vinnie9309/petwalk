@@ -22,6 +22,7 @@ const RegisterSteps = () => {
     } );
 
     const handlePersonalData = (value: any) => {
+        console.log(value);
         dispatch(storeActions.storeData(value));
     }
 
@@ -32,6 +33,7 @@ const RegisterSteps = () => {
                 <div className="flex justify-center">
                     <Image src={logo} height="160" width="120" alt="site logo" />
                 </div>
+                {/* TODO: Change this into dynamic paths instead of formSteps */}
                 { formStep === 0 && <RegisterOpitons nextFormStep={nextFormStep} handleData={handlePersonalData} /> }
                 { formStep === 1 && <PersonalInfo nextFormStep={nextFormStep} handleData={handlePersonalData} />  }
                 { formStep === 2 && <ContactInfo nextFormStep={nextFormStep} handleData={handlePersonalData} /> }

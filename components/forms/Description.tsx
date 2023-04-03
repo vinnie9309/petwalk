@@ -14,14 +14,10 @@ const Description = (props: any) => {
         setJobDescribeVal(event.target.value);
         setNextDisabled(event.target.value === 0);
     }
-
-    const handleContinue = () => {
-        // router.push('/register/uploadImg');
-        props.nextFormStep();
-    }
     
     const handleSubmit = (event: any) => {
         event.preventDefault();
+        props.nextFormStep();
         props.handleData({
             selfDescribeVal,
             jobDescribeVal
@@ -54,7 +50,7 @@ const Description = (props: any) => {
              </div>
 
             <div className="flex w-full">
-                <button onClick={handleContinue} disabled={ nextDisabled } className={`bg-red-400 p-4 w-full text-white mt-4 rounded ${nextDisabled ? 'disabled' : ''}`}>Напред</button>
+                <button disabled={ nextDisabled } className={`bg-red-400 p-4 w-full text-white mt-4 rounded ${nextDisabled ? 'disabled' : ''}`}>Напред</button>
             </div>
         </form>
     )

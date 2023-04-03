@@ -1,12 +1,10 @@
 'use client';
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const ContactInfo = (props: any) => {
     const [ mailVal, setMailVal ] = useState('')
     const [ phoneVal, setPhoneVal ] = useState('');
     const [ nextDisabled, setNextDisabled ] = useState(true);
-    const router = useRouter();
 
     const handleMailVal = (event: any) => {
         setMailVal(event.target.value);
@@ -20,7 +18,6 @@ const ContactInfo = (props: any) => {
 
     const handleContinue = () => {
         props.nextFormStep();
-        // router.push('/register/serviceSelect');
     }
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -33,14 +30,14 @@ const ContactInfo = (props: any) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <h1 className="text-2xl text-center mb-5">How can you be contacted?</h1>
+            <h1 className="text-2xl text-center mb-5">Как бихте желали да се свържат с вас?</h1>
             <div className="flex flex-col">
-                <label htmlFor="email">Email Adress</label>
+                <label htmlFor="email">Имейл</label>
                 <input onChange={handleMailVal} className="border rounded py-2 pl-3" id="email" />
             </div>
 
             <div className="flex flex-col">
-                <label htmlFor="phone">Phone Number</label>
+                <label htmlFor="phone">Телефонен номер</label>
                 <input onChange={handlePhoneVal} className="border rounded py-2 pl-3" id="phone" />
             </div>
             <div className="flex w-full">

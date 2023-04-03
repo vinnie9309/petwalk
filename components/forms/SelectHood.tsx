@@ -33,7 +33,8 @@ const SelectHood = (props: any) => {
     const [ nextDisabled, setNextDisabled ] = useState(true);
     const [selected, setSelected] = useState([]);
 
-    const toggleOption = ({ id }: { id: number }) => {
+    // TODO: Fix this type
+    const toggleOption = ({ id }: { id: never }) => {
         setSelected(prevSelected => {
             console.log(id);
             // if it's in, remove
@@ -59,9 +60,10 @@ const SelectHood = (props: any) => {
         <form onSubmit={handleSubmit}>
             <h1 className="text-lg mb-2">Изберете квартали в които ще работите</h1>
             {/* TODO: Add dynamic search
-            <div>
-                <input type="text" placeholder="Търсете квартали" />
-            </div> */}
+                <div>
+                    <input type="text" placeholder="Търсете квартали" />
+                </div>
+             */}
             <MultiSelect options={DUMMY_DATA} selected={selected} toggleOption={toggleOption} />
             <div className="flex w-full">
                 <button disabled={ nextDisabled } className={`bg-red-400 p-4 w-full text-white text-xl mt-4 rounded ${nextDisabled ? 'disabled' : ''}`}>Напред</button>

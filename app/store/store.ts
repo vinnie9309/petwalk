@@ -4,9 +4,9 @@ const dataSlice = createSlice({
     name: 'dataStore',
     initialState: { data: [], step: 0 },
     reducers: {
-        storeData(state, action) {
-            console.log( 'state', state);
-            console.log('action', action);
+        storeData(state: { data: any[], step: number } , action: { payload: any, type: string }) {
+            // Storing the data passed from every separat step
+            state.data = [...state.data, action.payload];
         },
         nextStep(state) {
             state.step = state.step + 1;

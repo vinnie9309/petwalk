@@ -2,6 +2,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 const MultiSelect = ({ options, selected, toggleOption }: any) => {
+
+    // Adding this because of browser error
+    const handleChange = () => {  }
+
     return (
         <div className="c-multi-select-dropdown">
         <div className="c-multi-select-dropdown__selected">
@@ -10,9 +14,9 @@ const MultiSelect = ({ options, selected, toggleOption }: any) => {
             { options.map( (option: { id: any, value: any, label: any }) => {
                 const isSelected = selected.includes(option.id);
                 return (
-                    <li key={option.id} className="py-2" onClick={() => toggleOption({ id: option.id })}>
-                        <FontAwesomeIcon icon={ isSelected && faCheck } style={{ fontSize: 30, color: "#EF4444" }}/>
-                        <input type="checkbox" checked={isSelected} className="invisible" />
+                    <li key={option.id} className="relative py-2" onClick={() => toggleOption({ id: option.id })}>
+                        { isSelected && <FontAwesomeIcon icon={ faCheck } style={{ position: 'absolute', left: -20, fontSize: 25, color: "#EF4444" }}/> }
+                        <input type="checkbox" checked={isSelected} onChange={handleChange} className="invisible" />
                         <span className="cursor-pointer text-lg">{option.label}</span>
                     </li>
                 );

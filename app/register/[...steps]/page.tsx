@@ -22,8 +22,15 @@ const RegisterSteps = () => {
     } );
 
     const handlePersonalData = (value: any) => {
-        console.log(value);
         dispatch(storeActions.storeData(value));
+
+        // fetch('https://react-http-testing-eb579-default-rtdb.europe-west1.firebasedatabase.app/orders.json', {
+        //     method: 'POST',
+        //     body: JSON.stringify({
+        //         user: userData,
+        //         orderItems: storeCtx.items
+        //     })
+        // });
     }
 
     return (

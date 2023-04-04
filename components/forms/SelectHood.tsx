@@ -30,13 +30,14 @@ const DUMMY_DATA: Array<{ label: string, value: string, id: number }> = [
 
 const SelectHood = (props: any) => {
     const [ selectedHood, setSelectedHood ] = useState([]);
-    const [ nextDisabled, setNextDisabled ] = useState(true);
-    const [selected, setSelected] = useState([]);
+    const [ selected, setSelected ] = useState([]);
 
     // TODO: Fix this type
     const toggleOption = ({ id }: { id: never }) => {
         setSelected(prevSelected => {
-            console.log(id);
+            const getItem: any = DUMMY_DATA.find( item => item.id === id);
+            console.log(getItem);
+            console.log(selected);
             // if it's in, remove
             const newArray = [...prevSelected]
             if (newArray.includes(id)) {
@@ -51,11 +52,13 @@ const SelectHood = (props: any) => {
     
     const handleSubmit = (event: any) => {
         event.preventDefault();
+
+        
         props.handleData({
             selectedHood
         });
     }
-
+    
     return (
         <form onSubmit={handleSubmit}>
             <h1 className="text-lg mb-2">Изберете квартали в които ще работите</h1>
@@ -66,7 +69,7 @@ const SelectHood = (props: any) => {
              */}
             <MultiSelect options={DUMMY_DATA} selected={selected} toggleOption={toggleOption} />
             <div className="flex w-full">
-                <button disabled={ nextDisabled } className={`bg-red-400 p-4 w-full text-white text-xl mt-4 rounded ${nextDisabled ? 'disabled' : ''}`}>Напред</button>
+                <button disabled={ selected.join('').length === 0 } className={`bg-red-400 p-4 w-full text-white text-xl mt-4 rounded ${ selected.join('').length === 0 ? 'disabled' : ''}`}>Завърши регистрация</button>
             </div>
         </form>
     )

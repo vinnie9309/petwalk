@@ -16,12 +16,9 @@ const ContactInfo = (props: any) => {
         setNextDisabled(event.target.value === 0);
     }
 
-    const handleContinue = () => {
-        props.nextFormStep();
-    }
-
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        props.nextFormStep();
         props.handleData({
             mailVal,
             phoneVal
@@ -41,7 +38,7 @@ const ContactInfo = (props: any) => {
                 <input onChange={handlePhoneVal} className="border rounded py-2 pl-3" id="phone" />
             </div>
             <div className="flex w-full">
-                <button onClick={handleContinue} disabled={ nextDisabled } className={`bg-red-400 p-4 w-full text-white mt-4 rounded ${nextDisabled ? 'disabled' : ''}`}>Напред</button>
+                <button disabled={ nextDisabled } className={`bg-red-400 p-4 w-full text-white mt-4 rounded ${nextDisabled ? 'disabled' : ''}`}>Напред</button>
             </div>
         </form>
     )

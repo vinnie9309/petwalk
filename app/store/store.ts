@@ -1,10 +1,20 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
+export interface storeData {
+    data: any[];
+    step: number;
+}
+
+export interface storeAction {
+    payload: any;
+    type: string;
+}
+
 const dataSlice = createSlice({
     name: 'dataStore',
     initialState: { data: [], step: 0 },
     reducers: {
-        storeData(state: { data: any[], step: number } , action: { payload: any, type: string }) {
+        storeData(state: storeData , action: storeAction) {
             // Storing the data passed from every separat step
             state.data = [...state.data, action.payload];
         },

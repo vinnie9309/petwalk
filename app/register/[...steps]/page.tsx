@@ -13,6 +13,8 @@ import UploadProfileImg from '../../../components/forms/UploadProfileImg';
 import Description from '../../../components/forms/Description';
 import SelectHood from '../../../components/forms/SelectHood';
 import RegisterOpitons from '../../../components/forms/RegisterOptions';
+import RegistrationComplete from '../../../components/forms/RegistrationComplete';
+import Link from 'next/link';
 
 const RegisterSteps = () => {
     const dispatch = useDispatch();
@@ -48,7 +50,13 @@ const RegisterSteps = () => {
                 { formStep === 4 && <DailyRate nextFormStep={nextFormStep} handleData={handlePersonalData} /> }
                 { formStep === 5 && <UploadProfileImg nextFormStep={nextFormStep} handleData={handlePersonalData} /> }
                 { formStep === 6 && <Description nextFormStep={nextFormStep} handleData={handlePersonalData} /> }
-                { formStep === 7 && <SelectHood nextFormStep={nextFormStep} handleData={handlePersonalData} /> } 
+                { formStep === 7 && <SelectHood nextFormStep={nextFormStep} handleData={handlePersonalData} /> }
+                { formStep === 8 && <RegistrationComplete /> }
+            </div>
+            <div className='w-full text-left'>
+                <Link href="/">
+                    <Image src={logo} height="220" width="160" alt="site logo" />
+                </Link>
             </div>
         </div>
     )

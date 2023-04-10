@@ -25,7 +25,7 @@ const DailyRate = (props: any) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <h1 className="text-2xl text-center mb-5">What rate are you offering for this job?</h1>
+            <h1 className="text-2xl text-center mb-5">Колко пари ще предлагате за тези услуги?</h1>
             <p className="mb-2 text-lg">Rate</p>
             <div className="flex mb-5">
                 <div className="flex flex-col mr-5">
@@ -42,7 +42,7 @@ const DailyRate = (props: any) => {
                     </select>
                 </div>
             </div>
-            <p className="mb-5 text-slate-500">It’s ok if aren’t sure about the rate, add an approximate one. You can always change it later.</p>
+            <p className="mb-5 text-slate-500">Ако не сте сигурни в тарифата, добавете приблизителна стойност. Винаги можете да я промените по-късно.</p>
             <div className="flex w-full">
                 <button disabled={ nextDisabled } className={`bg-red-400 p-4 w-full text-white text-xl mt-4 rounded ${nextDisabled ? 'disabled' : ''}`}>Напред</button>
             </div>

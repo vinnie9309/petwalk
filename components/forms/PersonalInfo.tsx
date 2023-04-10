@@ -28,7 +28,7 @@ const PersonalInfo = (props: any) => {
     return (
         <form onSubmit={handleSubmit}>
             <h1 className="text-2xl text-center mb-5">Лични данни</h1>
-            <div className="flex flex-col">
+            <div className="flex flex-col mb-5">
                 <label className="w-6" htmlFor="name">Име</label>
                 <input onChange={handleNameVal} value={nameVal} className="border rounded py-2 pl-3" id="name" />
             </div>

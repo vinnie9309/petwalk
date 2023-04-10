@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
 import MultiSelect from "../multiSelect/MultiSelect";
 
-// TODO: Find a better way to filter clicked items instead of using the selected boolean
+// TODO: Find a better way to filter clicked items instead of using the selected boolean (make this a state)
 const DUMMY_DATA: DummyData[] = [ 
     {
         label: 'Манастирски Ливади',
@@ -42,13 +41,8 @@ const DUMMY_DATA: DummyData[] = [
         selected: boolean;
     }
 
-    export interface getStoreData {
-        dataStore: { data: any };
-    }
-
 const SelectHood = (props: any) => {
     const [ selected, setSelected ] = useState([]);
-    const getState = useSelector<getStoreData>( state => state.dataStore.data );
 
     // TODO: Fix this type
     const toggleOption = ({ id }: { id: never }) => {
@@ -74,7 +68,6 @@ const SelectHood = (props: any) => {
         event.preventDefault();
         props.nextFormStep();
         const submitSelected = DUMMY_DATA.filter( item => item.selected === true );
-        console.log(getState);
 
         props.handleData({
             submitSelected

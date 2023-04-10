@@ -15,7 +15,7 @@ const dataSlice = createSlice({
     initialState: { data: [], step: 0 },
     reducers: {
         storeData(state: storeData , action: storeAction) {
-            // Storing the data passed from every separat step
+            // Storing the data passed from every separate step
             state.data = [...state.data, action.payload];
         },
         nextStep(state) {

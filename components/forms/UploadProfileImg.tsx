@@ -40,6 +40,7 @@ const UploadProfileImg = (props: any) => {
             <div className="flex flex-col w-full">
                 <input type="file" name="myImage" onChange={selectImage} className="mb-5" />
                 <button className="bg-red-400 p-4 w-full text-white text-xl mt-4 rounded">Добави снимка</button>
+                <button className="bg-slate-300 py-2 w-full text-white text-xl mt-4 rounded">Пропусни</button>
             </div>
         </form>
     )

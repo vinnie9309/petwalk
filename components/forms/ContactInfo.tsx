@@ -28,7 +28,7 @@ const ContactInfo = (props: any) => {
     return (
         <form onSubmit={handleSubmit}>
             <h1 className="text-2xl text-center mb-5">Как бихте желали да се свържат с вас?</h1>
-            <div className="flex flex-col">
+            <div className="flex flex-col mb-5">
                 <label htmlFor="email">Имейл</label>
                 <input onChange={handleMailVal} className="border rounded py-2 pl-3" id="email" />
             </div>

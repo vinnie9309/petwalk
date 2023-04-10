@@ -25,20 +25,11 @@ const RegisterSteps = () => {
 
     const handlePersonalData = (value: any) => {
         dispatch(storeActions.storeData(value));
-
-        // fetch('https://react-http-testing-eb579-default-rtdb.europe-west1.firebasedatabase.app/orders.json', {
-        //     method: 'POST',
-        //     body: JSON.stringify({
-        //         user: userData,
-        //         orderItems: storeCtx.items
-        //     })
-        // });
     }
 
     return (
         <div className='registration-wrapper flex flex-col items-center justify-center'>
             <div className="flex flex-col m-auto px-10 py-10 shadow-xl w-100">
-                <span>{formStep}</span>
                 <div className="flex justify-center">
                     <Image src={logo} height="160" width="120" alt="site logo" />
                 </div>

@@ -67,10 +67,11 @@ const SelectHood = (props: any) => {
     const handleSubmit = (event: any) => {
         event.preventDefault();
         props.nextFormStep();
-        const submitSelected = DUMMY_DATA.filter( item => item.selected === true );
+        const selectedHoods = DUMMY_DATA.filter( item => item.selected === true );
+        const selectedNames = selectedHoods.map( hood => hood.value );
 
         props.handleData({
-            submitSelected
+            selectedNames
         });
     }
     

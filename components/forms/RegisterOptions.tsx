@@ -4,21 +4,21 @@ import { useDispatch } from "react-redux";
 import './Forms.css';
 
 const RegisterOpitons = (props: any) => {
-    const [ sitterOption, setSitterOption ] = useState('');
+    const [ sitterOption, setSitterOption ] = useState({});
     const [ clickedSitter, setClickedSitter ] = useState(false);
     const [ clickedOwner, setClickedOwner ] = useState(false);
     const [ nextDisabled, setNextDisabled ] = useState(true);
     const dispatch = useDispatch();
     
     const sitterHandler = () => {
-        setSitterOption('sitter');
+        setSitterOption({ regOption: 'sitter'});
         setClickedSitter( true );
         setClickedOwner( false );
         setNextDisabled(false);
     }
     
     const ownerHandler = () => {
-        setSitterOption('LFsitter');
+        setSitterOption({ regOption: 'owner'});
         setClickedOwner( true );
         setClickedSitter( false );
         setNextDisabled(false);

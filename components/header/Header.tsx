@@ -15,6 +15,7 @@ const Header = () => {
                     <Link href="/sitter" className="nav-link relative mx-2">Помощ</Link>
                 </div>
                 <div className="flex items-center mr-0 ml-2">
+                    {/* <Link href="/login" className="nav-link relative mx-2">Намерете работа</Link> */}
                     <Link href="/login" className="nav-link relative mx-2">Вход</Link>
                     <Link href="/register/regOptions" className="bg-red-500 text-white px-4 py-2 rounded ml-5">Регистрация</Link>
                 </div>

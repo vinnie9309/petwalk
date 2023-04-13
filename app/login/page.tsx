@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import './login.css';
+import signIn from '../../firebase/auth/signin';
 
 const Login = () => {
     const [ emailValue, setEmailValue ] = useState('');
@@ -15,6 +16,7 @@ const Login = () => {
     }
 
     const handleSubmit = () => {
+        signIn( emailValue, passwordValue );
         console.log('submit');
     }
 

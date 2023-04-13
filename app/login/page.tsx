@@ -1,8 +1,6 @@
 'use client';
 import { useState } from 'react';
 import './login.css';
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../firebase/config.js';
 
 const Login = () => {
     const [ emailValue, setEmailValue ] = useState('');
@@ -14,18 +12,6 @@ const Login = () => {
 
     const handlePassword = (event: any) => {
         setPasswordValue(event.target.value);
-    }
-
-    const loginWIthEmailAndPassword = async () => {
-        await signInWithEmailAndPassword( auth, emailValue, passwordValue );
-    }
-
-    const createAccount = async () => {
-        try {
-            await createUserWithEmailAndPassword( auth, emailValue, passwordValue );
-        } catch(error) {
-            console.log(`There was an error creating the new account ${error}`)
-        }
     }
 
     const handleSubmit = () => {

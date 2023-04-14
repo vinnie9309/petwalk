@@ -1,6 +1,7 @@
 import Header from "../components/header/Header";
 import dogWoman from '../public/assets/images/home-first.png';
 import Image from "next/image";
+import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouseChimney,
@@ -33,6 +34,7 @@ export default function Home() {
           <h1 className="text-3xl lg:text-5xl text-center mb-7">Резервирайте <span className="text-red-500">доверени гледачи и разхождачи</span> които ще се отнасят към вашия домашен любимец като към семейство</h1>
           <p className="leading-6 text-slate-400 mb-7 text-base">Вече повече от 1 000 души използват PetSit.bg за да се грижат за домашните си любимци по време на дните в офиса или при пътувания</p>
           <button className="bg-red-500 text-white p-4 rounded">Намерете гледач</button>
+          <Link href="/register/regOptions" className="underline text-lg mt-5 font-semibold">Търсите работа за собственици на домашни любимци?</Link>
         </div>
         <div className="bg-gray-300 w-full p-8 block absolute left-0"></div>
         {/* 2 Second Section - Services */}

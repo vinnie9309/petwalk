@@ -29,7 +29,7 @@ const RegisterSteps = () => {
 
     return (
         <div className='registration-wrapper flex flex-col items-center justify-center'>
-            <div className="flex flex-col m-auto px-10 py-10 shadow-xl w-100">
+            <div className="flex flex-col m-auto px-10 py-10 shadow-xl lg:w-100 w-full">
                 <div className="flex justify-center">
                     <Image src={logo} height="160" width="120" alt="site logo" />
                 </div>

@@ -3,6 +3,7 @@ import { useState } from "react";
 
 const ContactInfo = (props: any) => {
     const [ mailVal, setMailVal ] = useState('')
+    const [ emailValidation, setEmailValidation ] = useState(false);
     const [ phoneVal, setPhoneVal ] = useState('');
     const [ nextDisabled, setNextDisabled ] = useState(true);
 
@@ -18,6 +19,11 @@ const ContactInfo = (props: any) => {
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        const emailRegex = /^[A-Za-z0-9._+\-\']+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$/g;
+        if ( !mailVal.match(emailRegex) ) {
+            setEmailValidation(true);
+            return;
+        } 
         props.nextFormStep();
         props.handleData({
             mailVal,
@@ -31,6 +37,7 @@ const ContactInfo = (props: any) => {
             <div className="flex flex-col mb-5">
                 <label htmlFor="email">Имейл</label>
                 <input onChange={handleMailVal} className="border rounded py-2 pl-3" id="email" />
+                { emailValidation && <span className="text-red-500 font-medium mt-2">Моля използвайте валиден имейл адрес</span> }
             </div>
 
             <div className="flex flex-col">

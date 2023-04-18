@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import './login.css';
 import signIn from '../../firebase/auth/signin';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../../firebase/config';
 
 const Login = () => {
     const [ emailValue, setEmailValue ] = useState('');
@@ -13,6 +15,16 @@ const Login = () => {
 
     const handlePassword = (event: any) => {
         setPasswordValue(event.target.value);
+    }
+
+    const monitorState = async () => {
+        onAuthStateChanged( auth, (user) => {
+            if( user ) {
+                console.log(user);
+            } else {
+                console.log('You are NOT logged in');
+            }
+        } )
     }
 
     const handleSubmit = () => {

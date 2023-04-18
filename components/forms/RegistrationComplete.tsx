@@ -37,9 +37,9 @@ const RegistrationComplete = () => {
         <div className="flex flex-col justify-center items-center">
             <h1 className="text-2xl mb-5">Готови сте!</h1>
             <p className="text-lg">Сега може да разгледате гледачи и да им изпратите вашата обява за работа!</p>
-            {/* <Link href="/"> */}
+            <Link href="/">
                 <button onClick={handleClick} className="bg-red-400 p-4 w-full text-white text-xl mt-4 rounded">Обратно към начална страница</button>
-            {/* </Link> */}
+            </Link>
             {/* TODO: Add a button that leads to different sitters */}
         </div>
     )

@@ -18,7 +18,7 @@ const Login = () => {
     }
 
     const monitorState = async () => {
-        onAuthStateChanged( auth, (user) => {
+        await onAuthStateChanged( auth, (user) => {
             if( user ) {
                 console.log(user);
             } else {
@@ -27,8 +27,10 @@ const Login = () => {
         } )
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (event: any) => {
+        event.preventDefault();
         signIn( emailValue, passwordValue );
+        monitorState();
         console.log('submit');
     }
 

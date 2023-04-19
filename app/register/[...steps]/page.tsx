@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { storeActions } from '../../store/store';
+import { storeActions } from '../../redux/store';
 import '../register.css';
 import Image from 'next/image';
 import logo from '../../../public/assets/images/logo.png';

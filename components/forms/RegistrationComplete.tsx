@@ -3,7 +3,7 @@ import Link from "next/link";
 import signUp from '../../firebase/auth/signup';
 
 export interface getStoreData {
-    dataStore: { data: any };
+    dataStore: { data: any, step: number, userLoggedin: boolean };
 }
 
 const RegistrationComplete = () => {
@@ -30,7 +30,6 @@ const RegistrationComplete = () => {
         if ( error ) {
             return console.log(error);
         }
-        console.log(result);
    }
 
     return (

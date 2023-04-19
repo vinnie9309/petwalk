@@ -12,7 +12,7 @@ export interface storeAction {
 
 const dataSlice = createSlice({
     name: 'dataStore',
-    initialState: { data: [], step: 0 },
+    initialState: { data: [], step: 0, userLoggedin: false },
     reducers: {
         storeData(state: storeData , action: storeAction) {
             // Storing the data passed from every separate step
@@ -20,6 +20,9 @@ const dataSlice = createSlice({
         },
         nextStep(state) {
             state.step = state.step + 1;
+        },
+        setUserLogin(state, action) {
+            state.userLoggedin = action.payload;
         }
     }
 });

@@ -26,7 +26,7 @@ const DailyRate = (props: any) => {
     return (
         <form onSubmit={handleSubmit}>
             <h1 className="text-2xl text-center mb-5">Колко пари ще предлагате за тези услуги?</h1>
-            <p className="mb-2 text-lg">Rate</p>
+            <p className="mb-2 text-lg">Сума</p>
             <div className="flex mb-5">
                 <div className="flex flex-col mr-5">
                     <div className="flex items-center border border-black rounded pl-3">

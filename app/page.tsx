@@ -25,9 +25,6 @@ import woman from '../public/assets/images/woman.png';
 export default function Home() {
   return (
     <>
-      <header className="flex justify-center items-center mb-5 shadow-md w-full fixed  bg-white z-50 top-0">
-        <Header />
-      </header>
       <main className="lg:px-36 lg:mt-24 px-8">
         {/* 1 First Section - Banner */}
         <div className="flex flex-col justify-center items-center py-20">
@@ -205,7 +202,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <Footer />
       </main>
     </>
   )

@@ -3,7 +3,7 @@ const Help = () => {
   enables the user to click, so we can load the related text upon request.  */}
   return (
     <>
-      <div className="lg:px-36 lg:mt-32 text-center flex flex-col leading-5">
+      <div className="lg:px-36 lg:mt-32 mt-20 text-center flex flex-col leading-5">
         <h2 className="text-4xl font-bold">Често задавани въпроси от клиенти</h2>
         <div className="w-2/3 text-justify [&_div]:my-8 self-center">
           <div className="[&_h3]:font-medium [&_h3]:text-2xl [&_h3]:my-3 [&_p]:text-xl">

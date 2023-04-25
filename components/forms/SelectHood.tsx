@@ -68,10 +68,9 @@ const SelectHood = (props: any) => {
         event.preventDefault();
         props.nextFormStep();
         const selectedHoods = DUMMY_DATA.filter( item => item.selected === true );
-        const selectedNames = selectedHoods.map( hood => hood.value );
 
         props.handleData({
-            selectedNames
+            selectedHoods
         });
     }
     

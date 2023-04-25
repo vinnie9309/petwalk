@@ -27,7 +27,7 @@ const Header = () => {
         <header className="flex justify-center items-center mb-5 shadow-md w-full fixed  bg-white z-50 top-0">
             <nav className="flex items-center sm:flex-row w-full max-w-6xl justify-between">
                 <div className="ml-0 mr-0"><Image src={logo} alt="pesitter logo" height="120" width="160" /></div>
-                <div className={`${hideMenu ? 'hidden' : 'flex'} sm:flex sm:ml-8 sm:mr-0 flex-col sm:flex-row grow sm:items-center text-center justify-around`}>
+                <div className={`${hideMenu ? 'hidden' : 'flex'} navi sm:flex sm:ml-8 sm:mr-0 flex-col sm:flex-row grow sm:items-center text-center justify-around`}>
                     <div className="flex items-center ml-0 mr-0 text-lg flex-col sm:flex-row">
                         <Link href="/sitter" className="nav-link relative mx-2 group">Станете Гледач</Link>
                         <Link href="/sitter" className="nav-link relative mx-2">Намерете Гледач</Link>

@@ -68,16 +68,15 @@ const SelectHood = (props: any) => {
         event.preventDefault();
         props.nextFormStep();
         const selectedHoods = DUMMY_DATA.filter( item => item.selected === true );
-        const selectedNames = selectedHoods.map( hood => hood.value );
 
         props.handleData({
-            selectedNames
+            selectedHoods
         });
     }
     
     return (
         <form>
-            <h1 className="text-lg mb-2">Изберете квартали в които ще работите</h1>
+            <h1 className="text-xl mb-2">Изберете кварталите в които ще работите</h1>
             {/* TODO: Add dynamic search
                 <div>
                     <input type="text" placeholder="Търсете квартали" />

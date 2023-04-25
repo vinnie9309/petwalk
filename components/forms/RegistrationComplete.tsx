@@ -1,20 +1,25 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 import signUp from '../../firebase/auth/signup';
+import { storeActions } from "../../app/redux/store";
 
 export interface getStoreData {
     dataStore: { data: any, step: number, userLoggedin: boolean };
 }
 
 const RegistrationComplete = () => {
-    const getState: any = useSelector<getStoreData>( state => state.dataStore.data );
+    const getUserDataState: any = useSelector<getStoreData>( state => state.dataStore.data );
+    const dispatch = useDispatch();
 
    const handleClick = async () => {
+        if ( getUserDataState.length > 7 ) {
+            dispatch(storeActions.storeData([]));
+        }
         // Send the data to the BE when we have reached the final step of registration
         const response = await fetch('https://petwalker-d43e0-default-rtdb.europe-west1.firebasedatabase.app/petSitters.json', {
             method: 'POST',
             body: JSON.stringify({
-                sitterData: getState
+                sitterData: getUserDataState
             }),
             headers: {
                 'Content-Type': 'application/json'
@@ -23,12 +28,13 @@ const RegistrationComplete = () => {
 
         const data = await response.json();
         // TODO: Fix types
-        const userEmail = getState.find( (user:any):any => user['mailVal']).mailVal;
-        const userPassword = getState.find( (user:any):any => user['passVal']).passVal
+        const userEmail = getUserDataState.find( (user:any):any => user['mailVal']).mailVal;
+        const userPassword = getUserDataState.find( (user:any):any => user['passVal']).passVal
         const { result, error } = await signUp( userEmail, userPassword );
+        dispatch(storeActions.setUserLogin(true));
 
         if ( error ) {
-            return console.log(error);
+            return console.error('Error signing in: ', error);
         }
    }
 

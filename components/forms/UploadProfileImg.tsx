@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState } from 'react';
 
 const UploadProfileImg = (props: any) => {
-    const [ selectedImg, setSelectedImg ] = useState(null);
+    const [ selectedImg, setSelectedImg ] = useState('notSelected');
     const [ nextDisabled, setNextDisabled ] = useState(true);
 
     const selectImage = (event: any) => {

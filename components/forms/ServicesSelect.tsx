@@ -18,6 +18,7 @@ const ServicesSelect = (props: any) => {
      });
      const [ petSitter, setPetsitter ] = useState(false);
      const getState: any = useSelector<getStoreData>( state => state.dataStore.data );
+     
      useEffect( () => {
         setPetsitter(getState.find( (item: any): any => item['regOption'] ).regOption === 'sitter');
     }, [] );

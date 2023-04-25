@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const DailyRate = (props: any) => {
     const [ rateVal, setRateVal ] = useState('');
-    const [ rateOption, setRateOption ] = useState('');
+    const [ rateOption, setRateOption ] = useState('day');
     const [ nextDisabled, setNextDisabled ] = useState(true);
 
     const handleRate = (event: any) => {
@@ -13,10 +13,11 @@ const DailyRate = (props: any) => {
     const handleSelect = (event: any) => {
         setRateOption(event.target.value);
     }
-
+    
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         props.nextFormStep();
+        console.log(rateOption);
         props.handleData({
             rateVal,
             rateOption

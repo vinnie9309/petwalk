@@ -7,7 +7,7 @@ import Image from "next/image";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 
-const findSitters = () => {
+const FindSitters = () => {
     const [ storeUsers, setStoreUsers ]: any[] = useState([]);
 
     useEffect( () => {
@@ -17,6 +17,7 @@ const findSitters = () => {
             // TODO: This is total BS type need to fix it
             const storeUserslocal: SetStateAction<any> = [];
             
+            // TODO: Do this in a better way, no boilerplate
             for ( const user in usersTojson ) {
                 const insideData: any[] = usersTojson[user].sitterData;
                 const name = insideData.find( userData => userData.nameVal ).nameVal;
@@ -25,7 +26,6 @@ const findSitters = () => {
                 const selectedUser = insideData.find( userData => userData.regOption ).regOption;
                 const describtion = insideData.find( userData => userData.jobDescribeVal ).jobDescribeVal;
                 const selectedHoods = insideData.find( userData => userData.selectedHoods )['selectedHoods'];
-                console.log(selectedHoods);
 
                 if ( selectedUser === 'sitter' ) {
                     storeUserslocal.push({
@@ -42,6 +42,10 @@ const findSitters = () => {
         }
         getResponse();
     }, [] );
+
+    const handleChange = () => {
+        console.log('handling');
+    }
 
     const mappedUsers: any = storeUsers.map( (user: any): any => {
         const hoodLabels = user.selectedHoods.map( (hood: any): any => <span className="font-semibold" key={hood.id}>{` ${hood.label}`}</span> );
@@ -68,8 +72,8 @@ const findSitters = () => {
         <div className="pt-44 w-full h-full bg-gray-300">
             <Header />
             <div className="flex flex-col findSitters-inner lg:flex-row mb-10">
-                <div className="shadow-xl bg-gray-100">
-                    The sidebar with the filters
+                <div className="shadow-xl bg-gray-100 p-3">
+                    <input onChange={handleChange} className="border rounded py-2 pl-3" type="text" placeholder="Търсете по квартал" />
                 </div>
                 <div className="w-full lg:ml-20 p-7 border-1 border-black">
                     <h1 className="text-center text-xl mb-5">Налични гледачи в избраните квартали</h1>
@@ -81,4 +85,4 @@ const findSitters = () => {
     )
 }
 
-export default findSitters;
+export default FindSitters;

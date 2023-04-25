@@ -17,6 +17,7 @@ const Header = () => {
     const handleLogout = async () => {
         await signOut(auth);
         dispatch(storeActions.setUserLogin(false));
+        await signOut(auth);
     }
 
     return (

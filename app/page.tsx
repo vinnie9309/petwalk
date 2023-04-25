@@ -1,4 +1,3 @@
-import Header from "../components/header/Header";
 import dogWoman from '../public/assets/images/home-first.png';
 import Image from "next/image";
 import Link from "next/link";
@@ -13,7 +12,6 @@ import {
   faQuoteRight
 } from "@fortawesome/free-solid-svg-icons";
 import './styles.css';
-import Footer from "../components/footer/Footer";
 import ladyDog from '../public/assets/images/home-second.png';
 import dollar from '../public/assets/images/icons/dollar-tag.svg';
 import pin from '../public/assets/images/icons/geo-locator.svg';
@@ -21,13 +19,13 @@ import list from '../public/assets/images/icons/list.png';
 import man from '../public/assets/images/man-1.png';
 import man2 from '../public/assets/images/man-2.png';
 import woman from '../public/assets/images/woman.png';
+import Header from '../components/header/Header';
+import Footer from '../components/footer/Footer';
 
 export default function Home() {
   return (
     <>
-      <header className="flex justify-center items-center mb-5 shadow-md w-full fixed  bg-white z-50 top-0">
-        <Header />
-      </header>
+      <Header />
       <main className="lg:px-36 lg:mt-24 px-8">
         {/* 1 First Section - Banner */}
         <div className="flex flex-col justify-center items-center py-20">
@@ -205,8 +203,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <Footer />
       </main>
+      <Footer />
     </>
   )
 }

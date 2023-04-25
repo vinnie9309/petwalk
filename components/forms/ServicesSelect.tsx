@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faCircle, faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import './Forms.css';
+import { useSelector } from 'react-redux';
+import { getStoreData } from './RegistrationComplete';
 
 const ServicesSelect = (props: any) => {
     const [ selected, setSelected ]: any = useState({ 
@@ -14,6 +16,12 @@ const ServicesSelect = (props: any) => {
         cat: false,
         otherAnimal: false
      });
+     const [ petSitter, setPetsitter ] = useState(false);
+     const getState: any = useSelector<getStoreData>( state => state.dataStore.data );
+     
+     useEffect( () => {
+        setPetsitter(getState.find( (item: any): any => item['regOption'] ).regOption === 'sitter');
+    }, [] );
 
     // TODO: Fix all the types here
     const handleCheck = (event: any) => {
@@ -43,6 +51,9 @@ const ServicesSelect = (props: any) => {
                 setSelected( (prevVal: { otherAnimal: any; }) => ({...prevVal, otherAnimal: !prevVal.otherAnimal}) )
             break;
         }
+
+        const getRegOption: string = getState.find( (item: any): any => item['regOption'] ).regOption;
+        console.log(getRegOption);
     }
 
     // TODO: Change this hacky way of sending the selected services
@@ -65,7 +76,7 @@ const ServicesSelect = (props: any) => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <h1 className="text-2xl text-center mb-8">Услуги от които се заинтересовани</h1>
+                { <h1 className="text-2xl text-center mb-8">{ petSitter ? 'Услуги които предлагате' : 'Услуги от които сте заинтересовани' }</h1> }
                 <div className="mb-5">
                     <label htmlFor="walk" className='flex text-lg hover:cursor-pointer'>
                         <span>
@@ -117,7 +128,12 @@ const ServicesSelect = (props: any) => {
                 </div>
 
                 {/* Select the type of animal section */}
-                <h1 className="text-2xl text-center my-8">Какво животинче имате?</h1>
+                {
+                petSitter ?
+                    <h1 className="text-2xl text-center my-8">Какво животинче бихте желали да гледате?</h1>
+                :
+                    <h1 className="text-2xl text-center my-8">Какво животинче имате?</h1>
+                }
                 <div className="mb-5">
                     <label htmlFor="dog" className='flex text-lg hover:cursor-pointer'>
                         <span>

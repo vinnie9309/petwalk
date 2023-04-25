@@ -1,9 +1,18 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { getStoreData } from "./RegistrationComplete";
+import { useEffect } from "react";
 
 const Description = (props: any) => {
     const [ selfDescribeVal, setSelfDescribeVal ] = useState('')
     const [ jobDescribeVal, setJobDescribeVal ] = useState('');
     const [ nextDisabled, setNextDisabled ] = useState(true);
+    const [ petSitter, setPetsitter ] = useState(false);
+
+    const getState: any = useSelector<getStoreData>( state => state.dataStore.data );
+    useEffect( () => {
+       setPetsitter(getState.find( (item: any): any => item['regOption'] ).regOption === 'sitter');
+   }, [] );
 
     const selfDescribe = (event: any) => {
         setSelfDescribeVal(event.target.value);
@@ -26,7 +35,7 @@ const Description = (props: any) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <h1 className="text-2xl text-center mb-5">Опишете услугите от които сте заинтересовани накратко</h1>
+            { <h1 className="text-2xl text-center mb-5">{ petSitter ? 'Опишете услугите които предлагате накратко' : 'Опишете услугите от които сте заинтересовани накратко' }</h1> }
             <div className="flex flex-col mb-5">
                  <label htmlFor="selfDescribe" className="text-lg mb-2">Опишете кой сте и от какви услуги се интересувате</label>
                  <textarea onChange={selfDescribe} className="border rounded py-2 pl-3" id="selfDescribe" />
@@ -38,14 +47,25 @@ const Description = (props: any) => {
             </div>
 
             <div className="mb-3i">
-                <h3 className="text-lg font-semibold mb-3">За да опишете усугите ще ви помогнат следните въпроси:</h3>
+                <h3 className="text-lg font-semibold mb-3">За да опишете услугите ще ви помогнат следните въпроси:</h3>
                 {/* TODO: Deferientiate the text for the owner/walkers0 */}
                 <ul className="list-disc ml-4">
-                    <li>Какви услуги предлагате?</li>
-                    <li>Какъв опит имате?</li>
-                    <li>Защо трябва да ви наемат?</li>
-                    <li>Има ли някаква специална квалификация или обучение?</li>
-                    <li>Каква е вашата наличност и свободно време?</li>
+                    {   
+                    petSitter ?
+                        <>
+                            <li>Какви услуги предлагате?</li>
+                            <li>Какъв опит имате?</li>
+                            <li>Защо трябва да ви наемат?</li>
+                            <li>Има ли някаква специална квалификация или обучение?</li>
+                            <li>Каква е вашата наличност и свободно време?</li>
+                        </>
+                    :
+                    <>
+                            <li>Какви услуги търсите?</li>
+                            <li>Търсите ли човек със специална квалификация или обучение?</li>
+                            <li>Каква е вашата наличност и свободно време?</li>
+                    </>
+                    }
                  </ul>
              </div>
 

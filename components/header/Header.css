@@ -15,14 +15,3 @@
     transform: scaleX(1);
     transform-origin: bottom left;
 }
-
-.navi {
-    width: 100%;
-    overflow: hidden;
-    z-index: 1000;
-    height: calc(100vh - 92px);
-    background-color: rgb(242, 242, 242);
-    left: 0px !important;
-    position: fixed !important;
-    top: 92px !important;
-}

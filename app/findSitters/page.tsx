@@ -54,14 +54,15 @@ const FindSitters = () => {
         console.log('the search has been submitted');
     }
 
+    // TODO: use react-window for the list
     const mappedUsers: any = storeUsers.map( (user: any): any => {
         const hoodLabels = user.selectedHoods.map( (hood: any): any => <span className="font-semibold" key={hood.id}>{` ${hood.label},`}</span> );
         const servicesLabels =  user.selectedServices.map( (serviceLabel:any):any => <strong key={user.id + Math.floor( Math.random() * 1000 )}>{`${serviceLabel}, `}</strong> );
 
         return (
-            <div className="flex items-center w-full border bg-gray-100 my-5 shadow-lg p-5 rounded-md" key={user.id}>
+            <div className="flex lg:flex-row flex-col items-center w-full border bg-gray-100 my-5 shadow-lg p-5 rounded-md" key={user.id}>
                 <div className="p-5">
-                    <Image src={defaultUserImg} alt="dog-walker-icon" width="60" height="30" />
+                    <Image src={defaultUserImg} alt="dog-walker-icon" width="70" height="40" />
                 </div>
                 <div>
                     <h1 className="text-2xl font-medium">{user.name}</h1>

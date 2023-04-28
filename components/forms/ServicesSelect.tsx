@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { getStoreData } from './RegistrationComplete';
 
 const ServicesSelect = (props: any) => {
-    const [ selected, setSelected ]: any = useState({ 
+    const [ selected, setSelected ]: any = useState({
         walk: false,
         ownerHome: false,
         walkerHome: false,
@@ -16,6 +16,13 @@ const ServicesSelect = (props: any) => {
         cat: false,
         otherAnimal: false
      });
+     const [ optionLabels, setOptionLabels ] = useState([
+         { option: 'walk', label: 'Разходка на куче' },
+         { option: 'ownerHome', label: 'Гледане в дома на собственика' },
+         { option: 'walkerHome', label: 'Гледане в дома на водача' },
+         { option: 'dayCare', label: 'Дневна грижа за любимците' },
+         { option: 'visitation', label: 'Посещение на място' },
+     ]);
      const [ petSitter, setPetsitter ] = useState(false);
      const getState: any = useSelector<getStoreData>( state => state.dataStore.data );
      
@@ -27,33 +34,30 @@ const ServicesSelect = (props: any) => {
     const handleCheck = (event: any) => {
         switch( event.target.value ) {
             case 'walk':
-                setSelected( (prevVal: { walk: any; }) => ({...prevVal, walk: !prevVal.walk }), selected)
+                setSelected( (prevVal: { walk: any; }) => ({...prevVal, walk: !prevVal.walk}) );
             break;
             case 'ownerHome':
-                setSelected( (prevVal: { ownerHome: any; }) => ({...prevVal, ownerHome: !prevVal.ownerHome}) )
+                setSelected( (prevVal: { ownerHome: any; }) => ({...prevVal, ownerHome: !prevVal.ownerHome}) );
             break;
             case 'walkerHome':
-                setSelected( (prevVal: { walkerHome: any; }) => ({...prevVal, walkerHome: !prevVal.walkerHome}) )
+                setSelected( (prevVal: { walkerHome: any; }) => ({...prevVal, walkerHome: !prevVal.walkerHome}) );
             break;
             case 'dayCare':
-                setSelected( (prevVal: { dayCare: any; }) => ({...prevVal, dayCare: !prevVal.dayCare}) )
+                setSelected( (prevVal: { dayCare: any; }) => ({...prevVal, dayCare: !prevVal.dayCare}) );
             break;
             case 'visitation':
-                setSelected( (prevVal: { visitation: any; }) => ({...prevVal, visitation: !prevVal.visitation}) )
+                setSelected( (prevVal: { visitation: any; }) => ({...prevVal, visitation: !prevVal.visitation}) );
             break;
             case 'dog':
-                setSelected( (prevVal: { dog: any; }) => ({...prevVal, dog: !prevVal.dog}) )
+                setSelected( (prevVal: { dog: any; }) => ({...prevVal, dog: !prevVal.dog}) );
             break;
             case 'cat':
-                setSelected( (prevVal: { cat: any; }) => ({...prevVal, cat: !prevVal.cat}) )
+                setSelected( (prevVal: { cat: any; }) => ({...prevVal, cat: !prevVal.cat}) );
             break;
             case 'otherAnimal':
-                setSelected( (prevVal: { otherAnimal: any; }) => ({...prevVal, otherAnimal: !prevVal.otherAnimal}) )
+                setSelected( (prevVal: { otherAnimal: any; }) => ({...prevVal, otherAnimal: !prevVal.otherAnimal}) );
             break;
         }
-
-        const getRegOption: string = getState.find( (item: any): any => item['regOption'] ).regOption;
-        console.log(getRegOption);
     }
 
     // TODO: Change this hacky way of sending the selected services
@@ -66,10 +70,19 @@ const ServicesSelect = (props: any) => {
             storeAll.push( { value: service, selected: selected[service] } );
         }
         const selectedService = storeAll.filter( item => item.selected === true );
+        [
+            { option: 'walk', label: 'Разходка на куче' },
+            { option: 'ownerHome', label: 'Гледане в дома на собственика' },
+            { option: 'walkerHome', label: 'Гледане в дома на водача' },
+            { option: 'dayCare', label: 'Дневна грижа за любимците' },
+            { option: 'visitation', label: 'Посещение на място' },
+        ]
+        const getSelectedLabel = optionLabels.filter( service => selectedService.find( label => label.value === service.option ) );
         const selectedNames = selectedService.map( item => item.value );
 
         props.handleData({
-            selectedNames
+            selectedNames,
+            labelNames: getSelectedLabel
         });
     }
 

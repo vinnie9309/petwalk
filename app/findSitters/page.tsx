@@ -26,7 +26,9 @@ const FindSitters = () => {
                 const selectedUser = insideData.find( userData => userData.regOption ).regOption;
                 const describtion = insideData.find( userData => userData.jobDescribeVal ).jobDescribeVal;
                 const selectedHoods = insideData.find( userData => userData.selectedHoods )['selectedHoods'];
+                const selectedServices = insideData.find( userData => userData.labelNames )['labelNames'].map( (item:any):any => item.label );
 
+                //Adding only the users that have selected to be a sitter
                 if ( selectedUser === 'sitter' ) {
                     storeUserslocal.push({
                         name,
@@ -34,6 +36,7 @@ const FindSitters = () => {
                         dailyRateOption,
                         describtion,
                         selectedHoods,
+                        selectedServices,
                         id: user
                     });
                 }
@@ -47,8 +50,13 @@ const FindSitters = () => {
         console.log('handling');
     }
 
+    const handleSearch = () => {
+        console.log('the search has been submitted');
+    }
+
     const mappedUsers: any = storeUsers.map( (user: any): any => {
-        const hoodLabels = user.selectedHoods.map( (hood: any): any => <span className="font-semibold" key={hood.id}>{` ${hood.label}`}</span> );
+        const hoodLabels = user.selectedHoods.map( (hood: any): any => <span className="font-semibold" key={hood.id}>{` ${hood.label},`}</span> );
+        const servicesLabels =  user.selectedServices.map( (serviceLabel:any):any => <strong key={user.id + Math.floor( Math.random() * 1000 )}>{`${serviceLabel}, `}</strong> );
 
         return (
             <div className="flex items-center w-full border bg-gray-100 my-5 shadow-lg p-5 rounded-md" key={user.id}>
@@ -56,24 +64,26 @@ const FindSitters = () => {
                     <Image src={defaultUserImg} alt="dog-walker-icon" width="60" height="30" />
                 </div>
                 <div>
-                    <h1 className="text-xl font-medium">{user.name}</h1>
+                    <h1 className="text-2xl font-medium">{user.name}</h1>
                     <div>
                         <span>{user.dailyRate}лв на </span>
                         <span>{user.dailyRateOption === 'day' ? 'ден' : 'час'}</span>
                         <p className="my-3">Избрани квартали: { hoodLabels }</p>
+                        <p>Предлагани услуги: { servicesLabels }</p>
                         <p className="my-3">{user.describtion}</p>
                     </div>
                 </div>
             </div>
-        ) 
-    } )
+        )
+    } );
 
     return (
         <div className="pt-44 w-full h-full bg-gray-300">
             <Header />
             <div className="flex flex-col findSitters-inner lg:flex-row mb-10">
-                <div className="shadow-xl bg-gray-100 p-3">
+                <div className="flex flex-col shadow-xl bg-gray-100 p-3">
                     <input onChange={handleChange} className="border rounded py-2 pl-3" type="text" placeholder="Търсете по квартал" />
+                    <button className="hover:bg-gray-300 hover:text-black mt-3 border rounded bg-red-500 text-white py-1 text-lg" type="submit" onClick={handleSearch}>Търсене</button>
                 </div>
                 <div className="w-full lg:ml-20 p-7 border-1 border-black">
                     <h1 className="text-center text-xl mb-5">Налични гледачи в избраните квартали</h1>

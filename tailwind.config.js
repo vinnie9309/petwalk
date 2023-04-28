@@ -15,7 +15,7 @@ module.exports = {
         'primary-gray': '#F2F2F2'
       },
       fontFamily: {
-
+      //let's add our fonts here
       },
     },
   },

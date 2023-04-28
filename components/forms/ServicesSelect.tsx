@@ -16,13 +16,6 @@ const ServicesSelect = (props: any) => {
         cat: false,
         otherAnimal: false
      });
-     const [ optionLabels, setOptionLabels ] = useState([
-         { option: 'walk', label: 'Разходка на куче' },
-         { option: 'ownerHome', label: 'Гледане в дома на собственика' },
-         { option: 'walkerHome', label: 'Гледане в дома на водача' },
-         { option: 'dayCare', label: 'Дневна грижа за любимците' },
-         { option: 'visitation', label: 'Посещение на място' },
-     ]);
      const [ petSitter, setPetsitter ] = useState(false);
      const getState: any = useSelector<getStoreData>( state => state.dataStore.data );
      
@@ -70,7 +63,7 @@ const ServicesSelect = (props: any) => {
             storeAll.push( { value: service, selected: selected[service] } );
         }
         const selectedService = storeAll.filter( item => item.selected === true );
-        [
+        const optionLabels = [
             { option: 'walk', label: 'Разходка на куче' },
             { option: 'ownerHome', label: 'Гледане в дома на собственика' },
             { option: 'walkerHome', label: 'Гледане в дома на водача' },

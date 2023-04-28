@@ -23,13 +23,13 @@ const Header = () => {
         <header className="flex justify-center items-center mb-5 shadow-md w-full fixed  bg-white z-50 top-0">
             <nav className="flex items-center flex-row w-full max-w-6xl">
             <div className="ml-0 mr-0">
-                    <Link href="/"><Image src={logo} alt="pesitter logo" height="100" width="140" /></Link>
-                </div>
+                <Link href="/"><Image src={logo} alt="pesitter logo" height="100" width="140" /></Link>
+            </div>
                 <div className="flex ml-8 mr-0 grow justify-between items-center">
                     <div className="flex items-center ml-0 mr-0 text-lg">
                         <Link href="/sitter" className="nav-link relative mx-2 group">Станете Гледач</Link>
                         <Link href="/findSitters" className="nav-link relative mx-2">Намерете Гледач</Link>
-                        <Link href="/sitter" className="nav-link relative mx-2">Контакти</Link>
+                        <Link href="/" className="nav-link relative mx-2">Контакти</Link>
                         <Link href="/help" className="nav-link relative mx-2">Помощ</Link>
                     </div>
                     <div className="flex items-center mr-0 ml-2">

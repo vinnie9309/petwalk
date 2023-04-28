@@ -12,8 +12,9 @@ const RegistrationComplete = () => {
     const dispatch = useDispatch();
 
    const handleClick = async () => {
+        console.log( getUserDataState );
         if ( getUserDataState.length > 7 ) {
-            dispatch(storeActions.storeData([]));
+            dispatch(storeActions.storeData('clear'));
         }
         // Send the data to the BE when we have reached the final step of registration
         const response = await fetch('https://petwalker-d43e0-default-rtdb.europe-west1.firebasedatabase.app/petSitters.json', {

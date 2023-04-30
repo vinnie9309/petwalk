@@ -22,10 +22,12 @@ const Header = () => {
     }
     const [hideMenu, setHideMenu] = useState(true);
     const [burgerClassToggle, setBurgerClassToggle] = useState(false);
+
     const showMenu = () => {
         setHideMenu(state => !state);
         setBurgerClassToggle(state => !state);
     }
+    
     return (
         <header className="flex justify-center items-center mb-5 shadow-md w-full fixed  bg-white z-50 top-0">
             <nav className="flex items-center sm:flex-row w-full max-w-6xl justify-between">

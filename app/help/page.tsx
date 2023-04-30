@@ -1,8 +1,12 @@
+import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
+
 const Help = () => {
-   {/* suggestion: since the text is quite a lot, we can make a small subnav with 2 buttons - client/user which
+  {/* suggestion: since the text is quite a lot, we can make a small subnav with 2 buttons - client/user which
   enables the user to click, so we can load the related text upon request.  */}
   return (
     <>
+      <Header />
       <div className="lg:px-36 lg:mt-32 text-center flex flex-col leading-5">
         <h2 className="text-4xl font-bold">Често задавани въпроси от клиенти</h2>
         <div className="w-2/3 text-justify [&_div]:my-8 self-center">
@@ -76,7 +80,7 @@ const Help = () => {
           </div>
         </div>
       </div>
-
+      <Footer />
     </>
   )
 }

@@ -34,30 +34,30 @@ const Header = () => {
                 <div className="ml-0 mr-0">
                     <Link href="/"><Image src={logo} alt="pesitter logo" height="100" width="140" /></Link>
                 </div>
-                <div className={`${hideMenu ? 'hidden' : 'flex'} nav overflow-hidden sm:flex sm:ml-8 sm:mr-0 flex-col bg-primary-gray w-full sm:flex-row grow sm:items-center text-center justify-around`}>
-                    <div className="flex items-center ml-0 mr-0 text-lg flex-col sm:flex-row">
-                        <Link href="/sitter" className="nav-link relative mx-2 group">Станете Гледач</Link>
-                        <Link href="/findSitters" className="nav-link relative mx-2">Намерете Гледач</Link>
-                        <Link href="/" className="nav-link relative mx-2">Контакти</Link>
-                        <Link href="/help" className="nav-link relative mx-2">Помощ</Link>
+                <div className={`${hideMenu ? 'hidden' : 'flex'} nav overflow-hidden sm:flex sm:ml-8 sm:mr-0 flex-col lg:bg-white bg-primary-gray w-full sm:flex-row grow sm:items-center text-center justify-around`}>
+                    <div className="flex items-center ml-0 mr-0 text-2xl lg:text-lg flex-col sm:flex-row">
+                        <Link href="/sitter" className="nav-link relative mx-2 group my-1">Станете Гледач</Link>
+                        <Link href="/findSitters" className="nav-link relative mx-2 my-1">Намерете Гледач</Link>
+                        <Link href="/" className="nav-link relative mx-2 my-1">Контакти</Link>
+                        <Link href="/help" className="nav-link relative mx-2 my-1">Помощ</Link>
                     </div>
-                    <div className="flex items-center sm:mr-0 sm:ml-2 flex-col sm:flex-row">
+                    <div className="flex items-center sm:mr-0 sm:ml-2 flex-col sm:flex-row text-xl lg:text-base">
                         {
                             getLoginState ?
                                 <>
-                                    <Link href="/" className="nav-link relative mx-2">Профил</Link>
-                                    <button className="nav-link relative mx-2" onClick={handleLogout}>Изход</button>
+                                    <Link href="/" className="nav-link relative mx-2 my-1">Профил</Link>
+                                    <button className="nav-link relative mx-2 my-1" onClick={handleLogout}>Изход</button>
                                 </>
                                 :
                                 <>
-                                    <Link href="/register/regOptions" className="bg-slate-400 text-white px-4 py-2 rounded sm:mr-5">Намерете работа</Link>
-                                    <Link href="/login" className="nav-link relative mx-2">Вход</Link>
-                                    <Link href="/register/regOptions" className="bg-red-500 text-white px-4 py-2 rounded sm:ml-5">Регистрация</Link>
+                                    <Link href="/register/regOptions" className="bg-slate-400 text-white px-4 py-2 rounded sm:mr-5 my-1">Намерете работа</Link>
+                                    <Link href="/login" className="nav-link relative mx-2 my-1">Вход</Link>
+                                    <Link href="/register/regOptions" className="bg-red-500 text-white px-4 py-2 rounded sm:ml-5 my-1">Регистрация</Link>
                                 </>
                         }
                     </div>
                 </div>
-                <button className={`${burgerClassToggle ? 'open' : ''} mx-4 sm:hidden burger-menu [&_span]:bg-red-500`} onClick={showMenu}>
+                <button className={`${burgerClassToggle ? 'open' : ''} mx-6 sm:hidden burger-menu [&_span]:bg-red-500`} onClick={showMenu}>
                     <span></span>
                     <span></span>
                     <span></span>

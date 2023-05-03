@@ -3,18 +3,24 @@ import man2 from '../../public/assets/images/man-2.png';
 import woman from '../../public/assets/images/woman.png';
 import Image from "next/image";
 import { useState } from 'react';
+import { storage } from '../../firebase/config';
+import { ref, uploadBytes } from 'firebase/storage';
+import { v4 } from 'uuid';
 
 const UploadProfileImg = (props: any) => {
-    const [ selectedImg, setSelectedImg ] = useState('notSelected');
+    const [ selectedImg, setSelectedImg ]: any = useState('notSelected');
     const [ nextDisabled, setNextDisabled ] = useState(true);
 
     const selectImage = (event: any) => {
-        setSelectedImg(event.target.files);
+        if ( selectedImg === 'notSelected' ) return;
+        setSelectedImg( event.target.files );
     }
     
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        props.nextFormStep();
         event.preventDefault();
+        const imageRef: any = ref(storage, `profileImages/${selectedImg.name + v4()}`);
+        uploadBytes(imageRef, selectedImg).then( res => alert('Изображението качено') );
+        props.nextFormStep();
         props.handleData({
             selectedImg
         });

@@ -16,14 +16,6 @@
     transform-origin: bottom left;
 }
 
-@media screen and (max-width: 640px) {
-    .nav {
-        height: calc(100vh - 92px);
-        position: absolute;
-        top: 80px;
-    }
-}
-
 .burger-menu {
     width: 35px;
     height: 40px;

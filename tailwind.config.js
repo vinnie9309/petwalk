@@ -6,11 +6,17 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
     extend: {
       width: {
         100: '31.25rem'
-      }
+      },
+      // let's define our colors here
+      colors: {
+        'primary-gray': '#F2F2F2'
+      },
+      fontFamily: {
+      //let's add our fonts here
+      },
     },
   },
   plugins: [],

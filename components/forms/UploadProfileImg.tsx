@@ -28,9 +28,10 @@ const UploadProfileImg = (props: any) => {
         });
     }, [] );
 
-    const handleSkipStep = () => {
-        props.nextFormStep('skip');
+    const handleSkipStep = (event: any) => {
+        event.preventDefault();
         props.handleData({userImg: 'default'});
+        props.nextFormStep('skip');
     }
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -40,7 +41,6 @@ const UploadProfileImg = (props: any) => {
         //Uploading the image to firebase storage and passing the image url to redux
         uploadBytes(imageRef, selectedImg).then( (snapshot: any): any => {
             getDownloadURL(snapshot.ref).then((url) => {
-                console.log(url);
                 props.handleData({userImg: url});
             });
             setUploadingImg(false);

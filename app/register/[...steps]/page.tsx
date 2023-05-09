@@ -14,12 +14,14 @@ import Description from '../../../components/forms/Description';
 import SelectHood from '../../../components/forms/SelectHood';
 import RegisterOpitons from '../../../components/forms/RegisterOptions';
 import RegistrationComplete from '../../../components/forms/RegistrationComplete';
+import ImgUploadSuccess from '../../../components/forms/ImgUploadSuccess';
 import Link from 'next/link';
 
 const RegisterSteps = () => {
     const dispatch = useDispatch();
     const [ formStep, setFormStep ] = useState(0);
-    const nextFormStep = () => setFormStep( () => {
+    const nextFormStep = ( skipStep = '' ) => setFormStep( () => {
+        if ( skipStep === 'skip' ) return formStep + 2;
         return formStep + 1;
     } );
 
@@ -41,9 +43,10 @@ const RegisterSteps = () => {
                 { formStep === 3 && <ServicesSelect nextFormStep={nextFormStep} handleData={handlePersonalData} /> }
                 { formStep === 4 && <DailyRate nextFormStep={nextFormStep} handleData={handlePersonalData} /> }
                 { formStep === 5 && <UploadProfileImg nextFormStep={nextFormStep} handleData={handlePersonalData} /> }
-                { formStep === 6 && <Description nextFormStep={nextFormStep} handleData={handlePersonalData} /> }
-                { formStep === 7 && <SelectHood nextFormStep={nextFormStep} handleData={handlePersonalData} /> }
-                { formStep === 8 && <RegistrationComplete /> }
+                { formStep === 6 && <ImgUploadSuccess nextFormStep={nextFormStep} /> }
+                { formStep === 7 && <Description nextFormStep={nextFormStep} handleData={handlePersonalData} /> }
+                { formStep === 8 && <SelectHood nextFormStep={nextFormStep} handleData={handlePersonalData} /> }
+                { formStep === 9 && <RegistrationComplete /> }
             </div>
             <div className='w-full text-left'>
                 <Link href="/">

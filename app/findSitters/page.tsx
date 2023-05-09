@@ -79,7 +79,7 @@ const FindSitters = () => {
         return (
             <div className="flex lg:flex-row flex-col items-center w-full border bg-gray-100 my-5 shadow-lg p-5 rounded-md" key={user.id}>
                 <div className="p-5">
-                    <Image src={ user.userImage? user.userImage : defaultUserImg } alt="user profile image" width="70" height="40" />
+                    <Image src={ user.userImage === 'default' ? defaultUserImg : user.userImage } alt="user profile image" width="70" height="40" />
                 </div>
                 <div>
                     <h1 className="text-2xl font-medium">{user.name}</h1>

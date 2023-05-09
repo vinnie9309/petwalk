@@ -30,7 +30,7 @@ const UploadProfileImg = (props: any) => {
 
     const handleSkipStep = () => {
         props.nextFormStep('skip');
-        props.props.handleData({userImg: 'default'});
+        props.handleData({userImg: 'default'});
     }
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {

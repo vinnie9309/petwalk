@@ -36,7 +36,7 @@ const Header = () => {
                 </div>
                 <div className={`${hideMenu ? 'hidden' : 'flex'} nav overflow-hidden sm:flex sm:ml-8 sm:mr-0 flex-col lg:bg-white bg-primary-gray w-full sm:flex-row grow sm:items-center text-center justify-around`}>
                     <div className="flex items-center ml-0 mr-0 text-2xl lg:text-lg flex-col sm:flex-row">
-                        <Link href="/sitter" className="nav-link relative mx-2 group my-1">Станете Гледач</Link>
+                        <Link href="/becomeSitter" className="nav-link relative mx-2 group my-1">Станете Гледач</Link>
                         <Link href="/findSitters" className="nav-link relative mx-2 my-1">Намерете Гледач</Link>
                         <Link href="/" className="nav-link relative mx-2 my-1">Контакти</Link>
                         <Link href="/help" className="nav-link relative mx-2 my-1">Помощ</Link>

@@ -3,14 +3,18 @@ import man2 from '../../public/assets/images/man-2.png';
 import woman from '../../public/assets/images/woman.png';
 import Image from "next/image";
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { storage } from '../../firebase/config';
 import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage';
 import { v4 } from 'uuid';
+import { getStoreData } from './RegistrationComplete';
 
 const UploadProfileImg = (props: any) => {
     const [ selectedImg, setSelectedImg ]: any = useState(null);
     const [ uploadingImg, setUploadingImg ] = useState(false);
     const [ userImageUrl, setUserImageUrl ] = useState('');
+    const [ petSitter, setPetsitter ] = useState(false);
+    const getState: any = useSelector<getStoreData>( state => state.dataStore.data );
     const userImageLisRef = ref( storage, "/profileImages" );
 
     const chooseImage = (event: any) => {
@@ -19,6 +23,8 @@ const UploadProfileImg = (props: any) => {
     }
     
     useEffect( () => {
+        setPetsitter(getState.find( (item: any): any => item['regOption'] ).regOption === 'sitter');
+
         listAll(userImageLisRef).then(res => {
             res.items.forEach( item => {
                 getDownloadURL(item).then(url => {
@@ -54,7 +60,7 @@ const UploadProfileImg = (props: any) => {
         :
         <form onSubmit={handleSubmit}>
             <h1 className="font-semibold text-2xl text-center mb-5">Добавете профилна снимка</h1>
-            <p className='text-center text-slate-500 mb-5'>Добавете снимка, за да увеличите шансовете си за намиране на работа.</p>
+            <p className='text-center text-slate-500 mb-5'>{`Добавете снимка, за да увеличите шансовете си за намиране на ${ petSitter ? 'работа.' : 'гледачи' } `}</p>
             <div className='flex justify-evenly mb-5'>
                 <Image src={man} height="120" width="80" alt="man smiling" />
                 <Image src={man2} height="120" width="80" alt="man smiling" />

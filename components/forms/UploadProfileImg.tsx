@@ -1,7 +1,7 @@
 import man from '../../public/assets/images/man-1.png';
 import man2 from '../../public/assets/images/man-2.png';
 import woman from '../../public/assets/images/woman.png';
-import Image from "next/image";
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { storage } from '../../firebase/config';

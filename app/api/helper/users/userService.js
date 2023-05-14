@@ -1,9 +1,10 @@
-export async function getUsers() {
+export async function getUsers(userType) {
     // const userImageLisRef = ref( storage, "/profileImages" );
     const getResponse =  async () => {
         const fetchUsers = await fetch('https://petwalker-d43e0-default-rtdb.europe-west1.firebasedatabase.app/petSitters.json');
         const usersTojson = await fetchUsers.json();
-        const storeUserslocal = [];
+        const storeSitters = [];
+        const storeOwners = [];
         
         // TODO: Do this in a better way, no boilerplate
         for ( const user in usersTojson ) {
@@ -20,7 +21,7 @@ export async function getUsers() {
 
             //Adding only the users that have selected to be a sitter
             if ( selectedUser === 'sitter' ) {
-                storeUserslocal.push({
+                storeSitters.push({
                     name,
                     dailyRate,
                     dailyRateOption,
@@ -30,9 +31,20 @@ export async function getUsers() {
                     userImage,
                     id: user
                 });
+            } else {
+                storeOwners.push({
+                    name,
+                    dailyRate,
+                    dailyRateOption,
+                    describtion,
+                    selectedHoods,
+                    selectedServices,
+                    userImage,
+                    
+                })
             }
         }
-        return storeUserslocal;
+        return userType === 'sitters' ? storeSitters : storeOwners;
     }
 
     return getResponse();

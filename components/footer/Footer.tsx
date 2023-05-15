@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Footer = () => {
     return (
-        <footer className='flex justify-evenly w-full bg-slate-400 bottom-0 left-0 text-white py-8'>
+        <footer className='flex sm:justify-evenly items-start w-full bg-slate-400 bottom-0 left-0 text-white py-8'>
             <div>
                 <Image src={logo} height="120" width="160" alt="petsit logo" />
             </div>

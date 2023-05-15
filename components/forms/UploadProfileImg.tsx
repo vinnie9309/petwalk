@@ -2,25 +2,56 @@ import man from '../../public/assets/images/man-1.png';
 import man2 from '../../public/assets/images/man-2.png';
 import woman from '../../public/assets/images/woman.png';
 import Image from "next/image";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { storage } from '../../firebase/config';
+import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage';
+import { v4 } from 'uuid';
 
 const UploadProfileImg = (props: any) => {
-    const [ selectedImg, setSelectedImg ] = useState('notSelected');
-    const [ nextDisabled, setNextDisabled ] = useState(true);
+    const [ selectedImg, setSelectedImg ]: any = useState(null);
+    const [ uploadingImg, setUploadingImg ] = useState(false);
+    const [ userImageUrl, setUserImageUrl ] = useState('');
+    const userImageLisRef = ref( storage, "/profileImages" );
 
-    const selectImage = (event: any) => {
-        setSelectedImg(event.target.files);
+    const chooseImage = (event: any) => {
+        setSelectedImg( event.target.files[0]);
+        if ( selectedImg === null ) return;
     }
     
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        props.nextFormStep();
-        event.preventDefault();
-        props.handleData({
-            selectedImg
+    useEffect( () => {
+        listAll(userImageLisRef).then(res => {
+            res.items.forEach( item => {
+                getDownloadURL(item).then(url => {
+                    setUserImageUrl(url);
+                })
+            } )
         });
+    }, [] );
+
+    const handleSkipStep = (event: any) => {
+        event.preventDefault();
+        props.handleData({userImg: 'default'});
+        props.nextFormStep('skip');
+    }
+
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        const imageRef: any = ref(storage, `profileImages/${selectedImg.name + v4()}`);
+        setUploadingImg(true);
+        //Uploading the image to firebase storage and passing the image url to redux
+        uploadBytes(imageRef, selectedImg).then( (snapshot: any): any => {
+            getDownloadURL(snapshot.ref).then((url) => {
+                props.handleData({userImg: url});
+            });
+            setUploadingImg(false);
+            props.nextFormStep();
+        } );
     }
 
     return (
+        uploadingImg ?
+        <h1 className='text-center'>Loading...</h1> 
+        :
         <form onSubmit={handleSubmit}>
             <h1 className="font-semibold text-2xl text-center mb-5">Добавете профилна снимка</h1>
             <p className='text-center text-slate-500 mb-5'>Добавете снимка, за да увеличите шансовете си за намиране на работа.</p>
@@ -38,9 +69,9 @@ const UploadProfileImg = (props: any) => {
                 </ul>
             </div>
             <div className="flex flex-col w-full">
-                <input type="file" name="myImage" onChange={selectImage} className="mb-5" />
+                <input type="file" name="myImage" onChange={chooseImage} className="mb-5" />
                 <button className="bg-red-400 p-4 w-full text-white text-xl mt-4 rounded">Добави снимка</button>
-                <button className="bg-slate-300 py-2 w-full text-white text-xl mt-4 rounded">Пропусни</button>
+                <button onClick={handleSkipStep} className="bg-slate-300 py-2 w-full text-white text-xl mt-4 rounded">Пропусни</button>
             </div>
         </form>
     )

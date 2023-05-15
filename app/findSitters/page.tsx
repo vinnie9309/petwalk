@@ -6,9 +6,13 @@ import defaultUserImg from '../../public/assets/images/icons/dog-walking.webp';
 import Image from "next/image";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
+import { listAll, ref, getDownloadURL } from "firebase/storage";
+import { storage } from "../../firebase/config";
 
 const FindSitters = () => {
     const [ storeUsers, setStoreUsers ]: any[] = useState([]);
+    const [ userImageList, setUserImageList ] = useState([]);
+    const userImageLisRef = ref( storage, "/profileImages" );
 
     useEffect( () => {
         const getResponse =  async () => {
@@ -27,6 +31,8 @@ const FindSitters = () => {
                 const describtion = insideData.find( userData => userData.jobDescribeVal ).jobDescribeVal;
                 const selectedHoods = insideData.find( userData => userData.selectedHoods )['selectedHoods'];
                 const selectedServices = insideData.find( userData => userData.labelNames )['labelNames'].map( (item:any):any => item.label );
+                const userImage = insideData.find( userData => userData.userImg ).userImg;
+                console.log(insideData);
 
                 //Adding only the users that have selected to be a sitter
                 if ( selectedUser === 'sitter' ) {
@@ -37,6 +43,7 @@ const FindSitters = () => {
                         describtion,
                         selectedHoods,
                         selectedServices,
+                        userImage,
                         id: user
                     });
                 }
@@ -44,6 +51,15 @@ const FindSitters = () => {
             setStoreUsers(storeUserslocal);
         }
         getResponse();
+
+        listAll(userImageLisRef).then(res => {
+            res.items.forEach( item => {
+                getDownloadURL(item).then(url => {
+                    setUserImageList( (prevItem): any => [...prevItem, url]);
+                })
+            } )
+            console.log(res); 
+        });
     }, [] );
 
     const handleChange = () => {
@@ -52,6 +68,7 @@ const FindSitters = () => {
 
     const handleSearch = () => {
         console.log('the search has been submitted');
+        console.log(userImageList);
     }
 
     // TODO: use react-window for the list
@@ -62,7 +79,7 @@ const FindSitters = () => {
         return (
             <div className="flex lg:flex-row flex-col items-center w-full border bg-gray-100 my-5 shadow-lg p-5 rounded-md" key={user.id}>
                 <div className="p-5">
-                    <Image src={defaultUserImg} alt="dog-walker-icon" width="70" height="40" />
+                    <Image src={ user.userImage === 'default' ? defaultUserImg : user.userImage } alt="user profile image" width="70" height="40" />
                 </div>
                 <div>
                     <h1 className="text-2xl font-medium">{user.name}</h1>

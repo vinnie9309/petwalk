@@ -16,7 +16,7 @@ const dataSlice = createSlice({
     reducers: {
         storeData(state: storeData , action: storeAction) {
             //Clear the state if we get 'clear' string
-            if ( action.payload === 'clear' ) state.data.slice(0, 0);
+            if ( action.payload === 'clear' ) state.data = state.data.slice(0, 0);
             // Storing the data passed from every separate step
             state.data = [...state.data, action.payload];
         },

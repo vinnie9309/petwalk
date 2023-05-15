@@ -76,7 +76,7 @@ const SelectHood = (props: any) => {
     
     return (
         <form>
-            <h1 className="text-xl mb-2">Изберете кварталите в които ще работите</h1>
+            <h1 className="text-xl mb-2">Изберете всичките квартали в които ще работите</h1>
             {/* TODO: Add dynamic search
                 <div>
                     <input type="text" placeholder="Търсете квартали" />

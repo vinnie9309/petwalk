@@ -29,9 +29,9 @@ const Header = () => {
     }
     
     return (
-        <header className="shadow-md fixed bg-white z-50 top-0 text-center w-full">
-            <nav className="flex items-center md:flex-row w-full justify-between py-2">
-                <div>
+        <header className="shadow-md fixed bg-white z-50 top-0 text-center w-full grid">
+            <nav className="flex items-center md:flex-row w-full justify-between py-2  max-w-6xl justify-self-center">
+                <div className="w-[140px]">
                     <Link href="/"><Image src={logo} alt="pesitter logo" height="100" width="140" /></Link>
                 </div>
                 <div className={`${hideMenu ? 'hidden' : 'flex'} absolute md:relative md:top-[0px] top-[80px] h-[calc(100vh-80px)] md:h-auto md:flex flex-col md:bg-white bg-primary-gray w-full md:flex-row md:items-center text-center justify-around md:justify-between`}>

@@ -17,7 +17,7 @@ export async function getUsers(userType) {
             const selectedHoods = insideData.find( userData => userData.selectedHoods )['selectedHoods'];
             const selectedServices = insideData.find( userData => userData.labelNames )['labelNames'].map( (item) => item.label );
             const userImage = insideData.find( userData => userData.userImg ).userImg;
-            console.log(insideData);
+            // console.log(insideData);
 
             //Adding only the users that have selected to be a sitter
             if ( selectedUser === 'sitter' ) {
@@ -40,7 +40,7 @@ export async function getUsers(userType) {
                     selectedHoods,
                     selectedServices,
                     userImage,
-                    
+                    id: user
                 })
             }
         }

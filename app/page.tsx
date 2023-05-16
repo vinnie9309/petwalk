@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="lg:px-36 lg:mt-24 px-8">
+      <main className="lg:px-36 mt-24 px-8">
         {/* 1 First Section - Banner */}
         <div className="flex flex-col justify-center items-center py-20">
           <h1 className="text-3xl lg:text-5xl text-center mb-7">Резервирайте <span className="text-red-500">доверени гледачи и разхождачи</span> които ще се отнасят към вашия домашен любимец като към семейство</h1>
@@ -134,7 +134,7 @@ export default function Home() {
           <div>
             <h1 className="text-center text-4xl mb-20">Нашите предимства</h1>
             <div className="flex flex-col lg:flex-row">
-              <div className="flex flex-1 flex-col justify-evenly pr-20">
+              <div className="flex flex-col flex-1 justify-evenly pr-20">
                 <div className="flex border-b-2 pb-5">
                   <Image src={pin} height="60" width="40" alt="geolocation pin icon" className="mr-5" />
                   <div>
@@ -157,8 +157,8 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="flex">
-                <Image src={ladyDog} height="1200" width="500" alt="lady on laptop with a dog next to her" />
+              <div>
+                <Image src={ladyDog} style={{objectFit: "contain"}} height="1024" width="400" alt="lady on laptop with a dog next to her" />
               </div>
             </div>
           </div>

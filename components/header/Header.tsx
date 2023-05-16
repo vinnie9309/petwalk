@@ -29,35 +29,35 @@ const Header = () => {
     }
     
     return (
-        <header className="flex justify-center items-center mb-5 shadow-md w-full fixed  bg-white z-50 top-0">
-            <nav className="flex items-center sm:flex-row w-full max-w-6xl justify-between">
-                <div className="ml-0 mr-0">
+        <header className="shadow-md fixed bg-white z-50 top-0 text-center w-full grid">
+            <nav className="flex items-center md:flex-row w-full justify-between py-2  max-w-6xl justify-self-center">
+                <div className="w-[140px]">
                     <Link href="/"><Image src={logo} alt="pesitter logo" height="100" width="140" /></Link>
                 </div>
-                <div className={`${hideMenu ? 'hidden' : 'flex'} nav overflow-hidden sm:flex sm:ml-8 sm:mr-0 flex-col lg:bg-white bg-primary-gray w-full sm:flex-row grow sm:items-center text-center justify-around`}>
-                    <div className="flex items-center ml-0 mr-0 text-2xl lg:text-lg flex-col sm:flex-row">
-                        <Link href="/becomeSitter" className="nav-link relative mx-2 group my-1">Станете Гледач</Link>
-                        <Link href="/findSitters" className="nav-link relative mx-2 my-1">Намерете Гледач</Link>
-                        <Link href="/" className="nav-link relative mx-2 my-1">Контакти</Link>
-                        <Link href="/help" className="nav-link relative mx-2 my-1">Помощ</Link>
+                <div className={`${hideMenu ? 'hidden' : 'flex'} absolute md:relative md:top-[0px] top-[80px] h-[calc(100vh-80px)] md:h-auto md:flex flex-col md:bg-white bg-primary-gray w-full md:flex-row md:items-center text-center justify-around md:justify-between`}>
+                    <div className="flex items-center text-xl md:text-lg lg:text-xl flex-col md:flex-row md:justify-between md:[&>*]:mx-4">
+                        <Link href="/becomeSitter" className="nav-link relative group">Станете Гледач</Link>
+                        <Link href="/findSitters" className="nav-link relative">Намерете Гледач</Link>
+                        <Link href="/" className="nav-link relative">Контакти</Link>
+                        <Link href="/help" className="nav-link relative">Помощ</Link>
                     </div>
-                    <div className="flex items-center sm:mr-0 sm:ml-2 flex-col sm:flex-row text-xl lg:text-base">
+                    <div className="flex items-center flex-col md:flex-row text-xl md:text-base lg:text-xl md:[&>*]:mx-4">
                         {
                             getLoginState ?
                                 <>
-                                    <Link href="/" className="nav-link relative mx-2 my-1">Профил</Link>
-                                    <button className="nav-link relative mx-2 my-1" onClick={handleLogout}>Изход</button>
+                                    <Link href="/" className="nav-link relative">Профил</Link>
+                                    <button className="nav-link relative" onClick={handleLogout}>Изход</button>
                                 </>
                                 :
                                 <>
-                                    <Link href="/register/regOptions" className="bg-slate-400 text-white px-4 py-2 rounded sm:mr-5 my-1">Намерете работа</Link>
-                                    <Link href="/login" className="nav-link relative mx-2 my-1">Вход</Link>
-                                    <Link href="/register/regOptions" className="bg-red-500 text-white px-4 py-2 rounded sm:ml-5 my-1">Регистрация</Link>
+                                    <Link href="/register/regOptions" className="bg-slate-400 text-white px-4 py-2 rounded">Намерете работа</Link>
+                                    <Link href="/login" className="nav-link relative">Вход</Link>
+                                    <Link href="/register/regOptions" className="bg-red-500 text-white px-4 py-2 rounded">Регистрация</Link>
                                 </>
                         }
                     </div>
                 </div>
-                <button className={`${burgerClassToggle ? 'open' : ''} mx-6 sm:hidden burger-menu [&_span]:bg-red-500`} onClick={showMenu}>
+                <button className={`${burgerClassToggle ? 'open' : ''} mx-6 md:hidden burger-menu [&_span]:bg-red-500`} onClick={showMenu}>
                     <span></span>
                     <span></span>
                     <span></span>

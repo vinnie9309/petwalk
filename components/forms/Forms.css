@@ -1,3 +1,8 @@
 .disabled {
     background-color: #b0b0b5 !important;
 }
+
+.hood-form-inner {
+    max-height: 500px;
+    overflow-y: scroll;
+}

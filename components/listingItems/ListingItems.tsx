@@ -1,6 +1,7 @@
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import Image from "next/image";
+import './listing-items.css';
 import defaultUserImg from '../../public/assets/images/icons/dog-walking.webp';
 
 const ListingItems = (props: any) => {
@@ -40,7 +41,7 @@ const ListingItems = (props: any) => {
     return (
         <div className="pt-44 w-full h-full bg-gray-300">
         <Header />
-        <div className="flex flex-col findSitters-inner lg:flex-row mb-10">
+        <div className="flex flex-col list-users-inner lg:flex-row mb-10">
             <div className="flex flex-col shadow-xl bg-gray-100 p-3">
                 <input onChange={handleChange} className="border rounded py-2 pl-3" type="text" placeholder="Търсете по квартал" />
                 <button className="hover:bg-gray-300 hover:text-black mt-3 border rounded bg-red-500 text-white py-1 text-lg" type="submit" onClick={handleSearch}>Търсене</button>

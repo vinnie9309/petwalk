@@ -5,7 +5,6 @@ const MultiSelect = ({ options, selected, toggleOption }: any) => {
 
     // Adding this because of browser error
     const handleChange = () => {  }
-    console.log(options);
     
     return (
         <div className="c-multi-select-dropdown">

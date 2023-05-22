@@ -1,13 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import { hoods } from "../../public/consts/globals";
 
 const MultiSelect = ({ options, selected, toggleOption }: any) => {
 
     // Adding this because of browser error
     const handleChange = () => {  }
-    const sortedHoods = hoods.sort( ( a, b )  => a.localeCompare( b ) );
-
+    console.log(options);
+    
     return (
         <div className="c-multi-select-dropdown">
         <div className="c-multi-select-dropdown__selected">

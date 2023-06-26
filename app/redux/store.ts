@@ -12,7 +12,7 @@ export interface storeAction {
 
 const dataSlice = createSlice({
     name: 'dataStore',
-    initialState: { data: [], step: 0, userLoggedin: false },
+    initialState: { data: [], step: 0, userLoggedin: false, currentUserId: '' },
     reducers: {
         storeData(state: storeData , action: storeAction) {
             //Clear the state if we get 'clear' string
@@ -25,12 +25,15 @@ const dataSlice = createSlice({
         },
         setUserLogin(state, action) {
             state.userLoggedin = action.payload;
+        },
+        currentUserId(state, action) {
+            state.currentUserId = action.payload;
         }
     }
 });
 
 export const store = configureStore({
-    reducer: {
+        reducer: {
         dataStore: dataSlice.reducer
     }
 });

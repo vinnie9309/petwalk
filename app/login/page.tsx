@@ -25,10 +25,11 @@ const Login = () => {
     }
 
     const monitorState = async () => {
-        await onAuthStateChanged( auth, (user) => {
+        await onAuthStateChanged( auth, (user: any) => {
             if ( user ) {
                 // Successful login!
-                console.log(user);
+                console.log('Login success!', user);
+                dispatch(storeActions.currentUserId(user.auth.currentUser.uid));
                 setUserIsLogged(true);
             } else {
                 console.error('You are NOT logged in');

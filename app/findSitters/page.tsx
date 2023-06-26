@@ -1,6 +1,6 @@
 'use client';
 
-import { SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { listAll, ref, getDownloadURL } from "firebase/storage";
 import { storage } from "../../firebase/config";
 import ListingItems from "../../components/listingItems/ListingItems";

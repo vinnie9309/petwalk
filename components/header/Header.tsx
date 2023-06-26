@@ -12,11 +12,10 @@ import { useState } from "react";
 
 
 const Header = () => {
-    const getLoginState = useSelector<getStoreData>(state => state.dataStore.userLoggedin);
+    const userLoggedin = useSelector<getStoreData>(state => state.dataStore.userLoggedin);
     const dispatch = useDispatch();
 
     const handleLogout = async () => {
-        await signOut(auth);
         dispatch(storeActions.setUserLogin(false));
         await signOut(auth);
     }
@@ -43,9 +42,9 @@ const Header = () => {
                     </div>
                     <div className="flex items-center flex-col md:flex-row text-xl md:text-base lg:text-xl md:[&>*]:mx-4">
                         {
-                            getLoginState ?
+                            userLoggedin ?
                                 <>
-                                    <Link href="/" className="nav-link relative">Профил</Link>
+                                    <Link href="/userChat" className="nav-link relative">Профил</Link>
                                     <button className="nav-link relative" onClick={handleLogout}>Изход</button>
                                 </>
                                 :

@@ -18,6 +18,7 @@ export async function getUsers(userType) {
             const selectedHoods = insideData.find( userData => userData.selectedHoods )['selectedHoods'];
             const selectedServices = insideData.find( userData => userData.labelNames )['labelNames'].map( (item) => item.label );
             const userImage = insideData.find( userData => userData.userImg ).userImg;
+            console.log(selectedHoods);
 
             //Adding only the users that have selected to be a sitter
             if ( selectedUser === 'sitter' ) {
@@ -75,6 +76,18 @@ export function createUserChat(id, name, currentUserId) {
         date: new Date().toLocaleString(),
         messages: { [name]: 'me default', [name]: 'you default' }
     });
+}
+
+export async function getUserDataNew() {
+    const db = getDatabase();
+    const starCountRef = ref(db, 'petSitters');
+    const storeData = [];
+    onValue(starCountRef, (snapshot) => {
+        const data = snapshot.val();
+        storeData.push(data);
+        console.log(data);
+    });
+    return storeData;
 }
 
 //Update the sent message

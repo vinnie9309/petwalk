@@ -30,7 +30,7 @@ const RegistrationComplete = () => {
         const data = await response.json();
         // TODO: Fix types
         const userEmail = getUserDataState.find( (user:any):any => user['mailVal']).mailVal;
-        const userPassword = getUserDataState.find( (user:any):any => user['passVal']).passVal
+        const userPassword = getUserDataState.find( (user:any):any => user['passVal']).passVal;
         const { result, error } = await signUp( userEmail, userPassword );
         dispatch(storeActions.setUserLogin(true));
 

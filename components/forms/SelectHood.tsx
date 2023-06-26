@@ -8,15 +8,6 @@ import './Forms.css';
 
 // TODO: Find a better way to filter clicked items instead of using the selected boolean (make this a state)
 const sortedHoods = hoods.sort( ( a, b )  => a.localeCompare( b ) );
-const properData: HoodData[] = sortedHoods.map( hood => {
-    return {
-        label: hood,
-        value: hood.replaceAll(' ', '_'),
-        id: v4(),
-        selected: false
-    }
-} );
-
 export interface HoodData {
     label: string;
     value: string;
@@ -27,7 +18,6 @@ export interface HoodData {
 const SelectHood = (props: any) => {
     const [ selected, setSelected ] = useState([]);
     const [ inputValue, setInputValue ] = useState('');
-    const [ selectedHoods, setSelectedHoods ]: any = useState([]);
     const [ hoodObj, setHoodObj ]:any[] = useState( []);
     const [ filterData, setFilterData ]: any[] = useState([]);
 
@@ -79,12 +69,12 @@ const SelectHood = (props: any) => {
     
     const handleSubmit = (event: any) => {
         event.preventDefault();
-        props.nextFormStep();
-        setSelectedHoods( properData.filter( item => item.selected === true ) );
-
+        const selectedOptions: HoodData[] | any = filterData.filter( (option: HoodData) => option.selected === true );
+        
         props.handleData({
-            selectedHoods
+            selectedHoods: selectedOptions
         });
+        props.nextFormStep();
     }
     
     return (

@@ -12,7 +12,6 @@ const RegistrationComplete = () => {
     const dispatch = useDispatch();
 
    const handleClick = async () => {
-        console.log( getUserDataState );
         if ( getUserDataState.length > 7 ) {
             dispatch(storeActions.storeData('clear'));
         }

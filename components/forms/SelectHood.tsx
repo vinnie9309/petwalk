@@ -70,7 +70,6 @@ const SelectHood = (props: any) => {
     const handleSubmit = (event: any) => {
         event.preventDefault();
         const selectedOptions: HoodData[] | any = filterData.filter( (option: HoodData) => option.selected === true );
-        
         props.handleData({
             selectedHoods: selectedOptions
         });

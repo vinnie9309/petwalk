@@ -24,11 +24,11 @@ const ContactInfo = (props: any) => {
             setEmailValidation(true);
             return;
         } 
-        props.nextFormStep();
         props.handleData({
             mailVal,
             phoneVal
         });
+        props.nextFormStep();
     }
 
     return (

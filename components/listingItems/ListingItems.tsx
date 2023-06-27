@@ -23,7 +23,7 @@ const ListingItems = (props: any) => {
     }
 
     const mappedUsers: any = props.userData.map( (user: any): any => {
-        const hoodLabels = user.selectedHoods.map( (hood: any): any => <span className="font-semibold" key={hood.id}>{` ${hood.label},`}</span> );
+        const hoodLabels = user.selectedHoods.map( (hood: any): any => <p className="lowercase first-letter:uppercase font-semibold" key={hood.id}>{` ${hood.label},`}</p> );
         const servicesLabels =  user.selectedServices.map( (serviceLabel:any):any => <strong key={user.id + Math.floor( Math.random() * 1000 )}>{`${serviceLabel}, `}</strong> );
 
         return (

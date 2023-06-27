@@ -26,11 +26,11 @@ const Description = (props: any) => {
     
     const handleSubmit = (event: any) => {
         event.preventDefault();
-        props.nextFormStep();
         props.handleData({
             selfDescribeVal,
             jobDescribeVal
         });
+        props.nextFormStep();
     }
 
     return (

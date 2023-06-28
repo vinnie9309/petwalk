@@ -2,3 +2,7 @@
     max-width: 1268px;
     margin: auto;
 }
+
+.test {
+    position: static;
+}

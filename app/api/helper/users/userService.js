@@ -84,7 +84,6 @@ export async function getUserDataNew() {
     onValue(starCountRef, (snapshot) => {
         const data = snapshot.val();
         storeData.push(data);
-        console.log(data);
     });
     return storeData;
 }
@@ -105,7 +104,6 @@ export async function getSelectedUserChat(id) {
     onValue(starCountRef, (snapshot) => {
         const data = snapshot.val();
         storeData.push(data);
-        console.log(data);
     });
     return storeData;
 }

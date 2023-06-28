@@ -23,7 +23,8 @@ const ListingItems = (props: any) => {
     }
 
     const mappedUsers: any = props.userData.map( (user: any): any => {
-        const hoodLabels = user.selectedHoods.map( (hood: any): any => <p className="lowercase first-letter:uppercase font-semibold" key={hood.id}>{` ${hood.label},`}</p> );
+        const hoodLabels = user.selectedHoods.map( (hood: any): any => <span className="test inline-block lowercase first-letter:uppercase font-semibold" key={hood.id}>{`${hood.label},`}</span> );
+        
         const servicesLabels =  user.selectedServices.map( (serviceLabel:any):any => <strong key={user.id + Math.floor( Math.random() * 1000 )}>{`${serviceLabel}, `}</strong> );
 
         return (
@@ -36,7 +37,7 @@ const ListingItems = (props: any) => {
                     <div>
                         <span>{user.dailyRate}лв на </span>
                         <span>{user.dailyRateOption === 'day' ? 'ден' : 'час'}</span>
-                        <p className="my-3">Избрани квартали: { hoodLabels }</p>
+                        <div className="my-3">Избрани квартали:{hoodLabels}</div>
                         <p>Предлагани услуги: { servicesLabels }</p>
                         <p className="my-3">{user.describtion}</p>
                         <button className="bg-red-400 p-2" onClick={()=>startChat(user.id, user.name)}><Link href={`/userChat/${user.id}`}>Изпрати съобщение</Link></button>
@@ -45,7 +46,7 @@ const ListingItems = (props: any) => {
             </div>
         )
     } );
-
+ 
     return (
         <div className="pt-44 w-full h-full bg-gray-300">
         <Header />

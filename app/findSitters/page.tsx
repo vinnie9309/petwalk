@@ -18,9 +18,8 @@ const FindSitters = () => {
             res.items.forEach( item => {
                 getDownloadURL(item).then(url => {
                     setUserImageList( (prevItem): any => [...prevItem, url]);
-                })
-            } )
-            console.log(res); 
+                });
+            } );
         });
     }, [] );
 

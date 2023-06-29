@@ -26,8 +26,8 @@ const RegisterOpitons = (props: any) => {
     
     const handleSubmit = ( event: any ) => {
         event.preventDefault();
-        props.nextFormStep();
         props.handleData(sitterOption);
+        props.nextFormStep();
     }
 
     return (

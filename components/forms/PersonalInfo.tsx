@@ -23,11 +23,12 @@ const PersonalInfo = (props: any) => {
             setPassValidation(true);
             return;
         }
-        props.nextFormStep();
+        
         props.handleData({
             nameVal,
             passVal
         });
+        props.nextFormStep();
     }
 
     return (

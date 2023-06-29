@@ -3,8 +3,12 @@ import Footer from "../footer/Footer";
 import Image from "next/image";
 import './listing-items.css';
 import defaultUserImg from '../../public/assets/images/icons/dog-walking.webp';
+import Link from "next/link";
+import { useSelector } from "react-redux";
+import { createUserChat } from "../../app/api/helper/users/userService";
 
 const ListingItems = (props: any) => {
+    const userIdState: string = useSelector( (state:any) => state.dataStore.currentUserId );
 
     const handleChange = () => {
 
@@ -14,8 +18,13 @@ const ListingItems = (props: any) => {
         
     }
 
+    const startChat = async (id: any, name: string) => {
+        return createUserChat( id, name, userIdState )
+    }
+
     const mappedUsers: any = props.userData.map( (user: any): any => {
-        const hoodLabels = user.selectedHoods.map( (hood: any): any => <span className="font-semibold" key={hood.id}>{` ${hood.label},`}</span> );
+        const hoodLabels = user.selectedHoods.map( (hood: any): any => <span className="test inline-block lowercase first-letter:uppercase font-semibold" key={hood.id}>{`${hood.label},`}</span> );
+        
         const servicesLabels =  user.selectedServices.map( (serviceLabel:any):any => <strong key={user.id + Math.floor( Math.random() * 1000 )}>{`${serviceLabel}, `}</strong> );
 
         return (
@@ -28,16 +37,16 @@ const ListingItems = (props: any) => {
                     <div>
                         <span>{user.dailyRate}лв на </span>
                         <span>{user.dailyRateOption === 'day' ? 'ден' : 'час'}</span>
-                        <p className="my-3">Избрани квартали: { hoodLabels }</p>
+                        <div className="my-3">Избрани квартали:{hoodLabels}</div>
                         <p>Предлагани услуги: { servicesLabels }</p>
                         <p className="my-3">{user.describtion}</p>
+                        <button className="bg-red-400 p-2" onClick={()=>startChat(user.id, user.name)}><Link href={`/userChat/${user.id}`}>Изпрати съобщение</Link></button>
                     </div>
                 </div>
             </div>
         )
     } );
-
-
+ 
     return (
         <div className="pt-44 w-full h-full bg-gray-300">
         <Header />

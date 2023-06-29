@@ -16,12 +16,11 @@ const DailyRate = (props: any) => {
     
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        props.nextFormStep();
-        console.log(rateOption);
         props.handleData({
             rateVal,
             rateOption
         });
+        props.nextFormStep();
     }
 
     return (

@@ -56,8 +56,6 @@ const ServicesSelect = (props: any) => {
     // TODO: Change this hacky way of sending the selected services
     const handleSubmit = (event: any) => {
         event.preventDefault();
-        props.nextFormStep();
-
         const storeAll: { value: any, selected: any }[] = [];
         for( let service in selected ) {
             storeAll.push( { value: service, selected: selected[service] } );
@@ -77,6 +75,7 @@ const ServicesSelect = (props: any) => {
             selectedNames,
             labelNames: getSelectedLabel
         });
+        props.nextFormStep();
     }
 
     return (

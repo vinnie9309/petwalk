@@ -5,7 +5,6 @@ import MultiSelect from "../multiSelect/MultiSelect";
 import { hoods } from "../../public/consts/globals";
 import { v4 } from 'uuid';
 import './Forms.css';
-import store from "../../app/redux/store";
 
 // TODO: Find a better way to filter clicked items instead of using the selected boolean (make this a state)
 const sortedHoods = hoods.sort((a, b) => a.localeCompare(b));
@@ -33,7 +32,6 @@ const SelectHood = (props: any) => {
                 selected: false
             }
         });
-
         setHoodObj(mappedData);
         setFilterData(mappedData);
     }, []);
@@ -78,7 +76,6 @@ const SelectHood = (props: any) => {
             props.handleData({
                 selectedHoods: selectedOptions
             });
-            console.log(selectedOptions)
             // props.nextFormStep();
         }
 
@@ -94,7 +91,7 @@ const SelectHood = (props: any) => {
                 <MultiSelect options={hoodObj} selected={selected} toggleOption={toggleOption} />
             </div>
             <div className="flex w-full">
-                <button onClick={handleSubmit} disabled={selected.join('').length === 0} className={`bg-red-400 p-4 w-full text-white text-xl mt-4 rounded ${selected.join('').length === 0 ? 'disabled' : ''}`}>{props.isSearch ? 'Търсене' : 'Завърши регистрация'}</button>
+                <button onClick={handleSubmit} disabled={selected.join('').length === 0 && !props.isSearch} className={`bg-red-400 p-4 w-full text-white text-xl mt-4 rounded ${(selected.join('').length === 0 && !props.isSearch) ? 'disabled' : ''}`}>{props.isSearch ? 'Търсене' : 'Завърши регистрация'}</button>
             </div>
         </form>
     )

@@ -5,15 +5,19 @@ import { useSelector } from "react-redux";
 import { createUserChat } from "../../app/api/helper/users/userService";
 import SelectHood from "../forms/SelectHood";
 import UserList from "../userList/UserList";
+import { useState } from "react";
 
 const ListingItems = (props: any) => {
+    let isSearch : boolean = true;
+    const [selectedHoods, setSelectedHoods] = useState([])
+
     const userIdState: string = useSelector( (state:any) => state.dataStore.currentUserId );
-    let isSearch = true;
 
     const addSelectedFilterHoods = (data : any) => {
-        // console.log(data)
+        setSelectedHoods(data.map((hood: any) => {
+            return hood.label
+        }))
     }
-
     const startChat = async (id: any, name: string) => {
         return createUserChat( id, name, userIdState )
     }
@@ -30,7 +34,7 @@ const ListingItems = (props: any) => {
                 </div>
                 <div className="w-full lg:ml-20 p-7 border-1 border-black">
                     <h1 className="text-center text-xl mb-5">Налични гледачи в избраните квартали</h1>
-                    <UserList data={props} startChat={startChat}/>
+                    <UserList data={props} startChat={startChat} filteredHoods={selectedHoods}/>
                 </div>
             </div>
             <Footer />

@@ -12,6 +12,7 @@ export async function getUsers(userType) {
             const insideData = usersTojson[user].sitterData;
             const name = insideData.find( userData => userData.nameVal ).nameVal;
             const dailyRateOption = insideData.find( userData => userData.rateOption ).rateOption;
+            const mail = insideData.find( userData => userData.mailVal ).mailVal
             const dailyRate = insideData.find( userData => userData.rateVal ).rateVal;
             const selectedUser = insideData.find( userData => userData.regOption ).regOption;
             const describtion = insideData.find( userData => userData.jobDescribeVal ).jobDescribeVal;
@@ -23,6 +24,7 @@ export async function getUsers(userType) {
             if ( selectedUser === 'sitter' ) {
                 storeSitters.push({
                     name,
+                    mail,
                     dailyRate,
                     dailyRateOption,
                     describtion,
@@ -34,6 +36,7 @@ export async function getUsers(userType) {
             } else {
                 storeOwners.push({
                     name,
+                    mail,
                     dailyRate,
                     dailyRateOption,
                     describtion,
@@ -50,9 +53,9 @@ export async function getUsers(userType) {
     return getResponse();
 }
 
-export async function getUserChat() {
+export async function getUserChat(id) {
     const getResponse = async () => {
-        const fetchUsers = await fetch('https://petwalker-d43e0-default-rtdb.europe-west1.firebasedatabase.app/userChat.json');
+        const fetchUsers = await fetch(`https://petwalker-d43e0-default-rtdb.europe-west1.firebasedatabase.app/userChat.json/${id}`);
         const chatTojson = await fetchUsers.json();
         const storeUserChat = [];
 

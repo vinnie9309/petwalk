@@ -158,7 +158,7 @@ export default function Home() {
                 </div>
               </div>
               <div>
-                <Image src={ladyDog} style={{objectFit: "contain"}} height="1024" width="400" alt="lady on laptop with a dog next to her" />
+                <Image className='my-8 mx-auto' src={ladyDog} style={{objectFit: "contain"}} height="1024" width="400" alt="lady on laptop with a dog next to her" />
               </div>
             </div>
           </div>

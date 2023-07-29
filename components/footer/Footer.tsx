@@ -1,31 +1,34 @@
-import logo from '../../public/assets/images/logo.png';
+import logo from '../../public/assets/images/logo-footer.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import './Footer.css';
 
 const Footer = () => {
     return (
-        <footer className='flex sm:justify-evenly items-start w-full bg-slate-400 bottom-0 left-0 text-white py-8'>
-            <div>
-                <Image src={logo} height="120" width="160" alt="petsit logo" />
+        <footer className='flex w-full bg-slate-400'>
+            <div className='image-wrapper pt-1'>
+                <Image src={logo} height="90" width="120" alt="petsit logo" />
             </div>
 
-            <div className='flex flex-col justify-evenly'>
-               <h3 className='text-xl font-semibold'>Услуги</h3> 
-               <Link href="/">Намерете гледач</Link>
-            </div>
+            <div className="flex footer-links">                
+                <div className='flex flex-col'>
+                    <h3 className='text-2xl font-semibold mb-2'>Услуги</h3> 
+                    <Link href="/">Намерете гледач</Link>
+                </div>
 
-            <div className='flex flex-col justify-evenly'>
-                <h3 className='text-xl font-semibold'>За PetSit</h3>
-                <Link href="/">За нас</Link>
-                <Link href="/">Условия на ползване</Link>
-                <Link href="/">Политика за поверителност</Link>
-                <Link href="/">Настройки на бисквитки</Link>
-            </div>
+                <div className='flex flex-col'>
+                    <h3 className='text-2xl font-semibold mb-2'>За PetSit</h3>
+                    <Link href="/">За нас</Link>
+                    <Link href="/">Условия на ползване</Link>
+                    <Link href="/">Политика за поверителност</Link>
+                    <Link href="/">Настройки на бисквитки</Link>
+                </div>
 
-            <div className='flex flex-col justify-evenly'>
-                <h3 className='text-xl font-semibold'>Поддръжка</h3>
-                <Link href="/">Свържете се с нас</Link>
-                <Link href="/">Помощен център</Link>
+                <div className='flex flex-col'>
+                    <h3 className='text-2xl font-semibold mb-2'>Поддръжка</h3>
+                    <Link href="/">Свържете се с нас</Link>
+                    <Link href="/">Помощен център</Link>
+                </div>
             </div>
         </footer>
     )

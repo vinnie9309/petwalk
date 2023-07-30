@@ -33,11 +33,10 @@ const Header = () => {
                 <div className="w-[140px]">
                     <Link href="/"><Image src={logo} alt="pesitter logo" height="100" width="140" /></Link>
                 </div>
-                <div className={`${hideMenu ? 'hidden' : 'flex'} absolute md:relative md:top-[0px] top-[80px] h-[calc(100vh-80px)] md:h-auto md:flex flex-col md:bg-white bg-primary-gray w-full md:flex-row md:items-center text-center justify-around md:justify-between`}>
+                <div className={`${hideMenu ? 'hidden' : 'flex'} absolute md:relative md:top-[0px] top-[80px] h-[calc(100vh-80px)] md:h-auto md:flex flex-col md:bg-white bg-primary-gray w-full md:flex-row md:items-center text-center md:justify-between`}>
                     <div className="flex items-center text-xl md:text-lg lg:text-xl flex-col md:flex-row md:justify-between md:[&>*]:mx-4">
                         <Link href="/becomeSitter" className="nav-link relative group">Станете Гледач</Link>
                         <Link href="/findSitters" className="nav-link relative">Намерете Гледач</Link>
-                        <Link href="/" className="nav-link relative">Контакти</Link>
                         <Link href="/help" className="nav-link relative">Помощ</Link>
                     </div>
                     <div className="flex items-center flex-col md:flex-row text-xl md:text-base lg:text-xl md:[&>*]:mx-4">

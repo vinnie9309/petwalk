@@ -168,7 +168,7 @@ export default function Home() {
           <h1 className="text-xl text-center mb-5">ОТЗИВИ</h1>
           <div className="bg-red-500 h-1 w-60 m-auto mb-8 rounded"></div>
           <p className="text-center mb-10">Какво казват нашите клиенти</p>
-          <div className="flex flex-col items-center lg:justify-evenly lg:flex-row">
+          <div className="flex flex-col items-center lg:justify-evenly lg:flex-row mb-5">
             <div className="flex flex-col items-center bg-stone-200 max-w-xs p-10 rounded text-center justify-center mb-5">
               <Image src={man} height="120" width="80" alt="man smiling" />
               <div className="w-20 bg-white h-1 rounded mt-4"></div>

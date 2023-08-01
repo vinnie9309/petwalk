@@ -6,3 +6,7 @@
 .test {
     position: static;
 }
+
+.msg-btn-wrapper {
+    align-self: flex-end;
+}

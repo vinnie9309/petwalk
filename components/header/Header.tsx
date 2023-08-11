@@ -10,7 +10,6 @@ import { auth } from "../../firebase/config";
 import { storeActions } from "../../app/redux/store";
 import { useState } from "react";
 
-
 const Header = () => {
     const userLoggedin = useSelector<getStoreData>(state => state.dataStore.userLoggedin);
     const dispatch = useDispatch();
@@ -43,7 +42,7 @@ const Header = () => {
                         {
                             userLoggedin ?
                                 <>
-                                    <Link href="/userChat" className="nav-link relative">Профил</Link>
+                                    {/* <Link href="/userChat" className="nav-link relative">Профил</Link> */}
                                     <button className="nav-link relative" onClick={handleLogout}>Изход</button>
                                 </>
                                 :

@@ -4,7 +4,7 @@ import signUp from '../../firebase/auth/signup';
 import { storeActions } from "../../app/redux/store";
 
 export interface getStoreData {
-    dataStore: { data: any, step: number, userLoggedin: boolean };
+    dataStore: { data: any, step: number, userLoggedin: boolean, currentUserId: string, combinedId: string };
 }
 
 const RegistrationComplete = () => {

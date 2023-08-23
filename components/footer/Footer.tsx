@@ -5,7 +5,7 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <footer className='flex w-full bg-slate-400'>
+        <footer className='flex w-full bg-green-2 text-white'>
             <div className='image-wrapper pt-1'>
                 <Image src={logo} height="90" width="120" alt="petsit logo" />
             </div>

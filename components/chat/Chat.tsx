@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import './chat.css';
 import ChatMessages from "../messages/ChatMessages";
-import { getDoc, doc, updateDoc, arrayUnion, onSnapshot } from "firebase/firestore";
+import { doc, updateDoc, arrayUnion, onSnapshot } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import { useSelector } from "react-redux";
 

@@ -2,7 +2,7 @@
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import Image from "next/image";
-import './listing-items.css';
+import './ListingItems.css';
 import defaultUserImg from '../../public/assets/images/icons/dog-walking.webp';
 import { useDispatch, useSelector } from "react-redux";
 import { setDoc, doc, updateDoc, getDoc } from 'firebase/firestore';

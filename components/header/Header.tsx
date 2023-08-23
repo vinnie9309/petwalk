@@ -34,9 +34,9 @@ const Header = () => {
                 </div>
                 <div className={`${hideMenu ? 'hidden' : 'flex'} absolute md:relative md:top-[0px] top-[80px] h-[calc(100vh-80px)] md:h-auto md:flex flex-col md:bg-white bg-primary-gray w-full md:flex-row md:items-center text-center md:justify-between`}>
                     <div className="flex items-center text-xl md:text-lg lg:text-xl flex-col md:flex-row md:justify-between md:[&>*]:mx-4">
-                        <Link href="/becomeSitter" className="nav-link relative group">Станете Гледач</Link>
-                        <Link href="/findSitters" className="nav-link relative">Намерете Гледач</Link>
-                        <Link href="/help" className="nav-link relative">Помощ</Link>
+                        <Link href="/becomeSitter" className="nav-link pb-1 relative group">Станете Гледач</Link>
+                        <Link href="/findSitters" className="nav-link pb-1 relative">Намерете Гледач</Link>
+                        <Link href="/help" className="nav-link pb-1 relative">Помощ</Link>
                     </div>
                     <div className="flex items-center flex-col md:flex-row text-xl md:text-base lg:text-xl md:[&>*]:mx-4">
                         {
@@ -47,14 +47,14 @@ const Header = () => {
                                 </>
                                 :
                                 <>
-                                    <Link href="/register/regOptions" className="bg-slate-400 text-white px-4 py-2 rounded">Намерете работа</Link>
+                                    <Link href="/register/regOptions" className="text-slate-500 border-2 px-4 py-2 rounded border-slate-500 hover:border-slate-800 hover:text-slate-800">Намерете работа</Link>
                                     <Link href="/login" className="nav-link relative">Вход</Link>
-                                    <Link href="/register/regOptions" className="bg-red-500 text-white px-4 py-2 rounded">Регистрация</Link>
+                                    <Link href="/register/regOptions" className="bg-green-2 text-white px-4 py-2 rounded hover:bg-gold hover:bg-teal-700">Регистрация</Link>
                                 </>
                         }
                     </div>
                 </div>
-                <button className={`${burgerClassToggle ? 'open' : ''} mx-6 md:hidden burger-menu [&_span]:bg-red-500`} onClick={showMenu}>
+                <button className={`${burgerClassToggle ? 'open' : ''} mx-6 md:hidden burger-menu [&_span]:bg-teal-600`} onClick={showMenu}>
                     <span></span>
                     <span></span>
                     <span></span>

@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import './chat.css';
+import './Chat.css';
 import ChatMessages from "../messages/ChatMessages";
 import { getDoc, doc, updateDoc, arrayUnion, onSnapshot } from "firebase/firestore";
 import { db } from "../../firebase/config";

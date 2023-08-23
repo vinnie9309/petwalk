@@ -51,7 +51,7 @@ export default function Home() {
 
               <div className="flex items-center col-xs-12 col-sm-6 mb-7 lg:max-w-xl">
                 <i className="fa-solid fa-house-chimney"></i>
-                <FontAwesomeIcon icon={faHouseChimney} style={{ fontSize: 30, color: "#FE6D73" }}/>
+                <FontAwesomeIcon icon={faHouseChimney} style={{ fontSize: 30, color: "#48A9A6" }}/>
                 <div className="ml-4">
                   <h3 className="text-2xl font-semibold mb-2">Гледане във вашия дом</h3>
                   <p className="text-slate-500 leading-6">Вашият гледач ще се грижи за домашните ви любимци и за дома ви. Вашите домашни любимци ще получат цялото внимание от което се нуждаят, без да напускат дома си</p>
@@ -59,7 +59,7 @@ export default function Home() {
               </div>
 
               <div className="flex items-center col-xs-12 col-sm-6 mb-7 lg:max-w-xl">
-              <FontAwesomeIcon icon={faHouseChimneyUser} style={{ fontSize: 30, color: "#FE6D73" }}/>
+              <FontAwesomeIcon icon={faHouseChimneyUser} style={{ fontSize: 30, color: "#48A9A6" }}/>
                 <div className="ml-4">
                   <h3 className="text-2xl font-semibold mb-2">В дома на гледача</h3>
                   <p className="text-slate-500 leading-6">Вашите домашни любимци остават в дома на гледача. Там те ще бъдат третирани като част от семейството в комфортна среда.</p>
@@ -67,7 +67,7 @@ export default function Home() {
               </div>
 
               <div className="flex items-center col-xs-12 col-sm-6 mb-7 lg:max-w-xl">
-              <FontAwesomeIcon icon={faPaw} style={{ fontSize: 30, color: "#FE6D73" }}/>
+              <FontAwesomeIcon icon={faPaw} style={{ fontSize: 30, color: "#48A9A6" }}/>
                 <div className="ml-4">
                   <h3 className="text-2xl font-semibold mb-2">Разходка на кучета</h3>
                   <p className="text-slate-500 leading-6">Запазете посещение, за да осигурите на домашния си любимец ежедневна доза нужни упражнения.</p>
@@ -77,7 +77,7 @@ export default function Home() {
 
             <div className="right-col">
             <div className="flex items-center col-xs-12 col-sm-6 mb-7 lg:max-w-xl">
-              <FontAwesomeIcon icon={faShieldDog} style={{ fontSize: 30, color: "#FE6D73" }}/>
+              <FontAwesomeIcon icon={faShieldDog} style={{ fontSize: 30, color: "#48A9A6" }}/>
                 <div className="ml-4">
                   <h3 className="text-2xl font-semibold mb-2">Дневна грижа за домашни любимци</h3>
                   <p className="text-slate-500 leading-6">Домашният ви любимец прекарва деня в дома на гледача. Оставяте го сутрин и взимате щастливо животинче вечерта.</p>
@@ -85,7 +85,7 @@ export default function Home() {
               </div>
 
               <div className="flex items-center col-xs-12 col-sm-6 mb-7 lg:max-w-xl">
-                <FontAwesomeIcon icon={faHouseCircleCheck} style={{ fontSize: 30, color: "#FE6D73" }}/>
+                <FontAwesomeIcon icon={faHouseCircleCheck} style={{ fontSize: 30, color: "#48A9A6" }}/>
                 <div className="ml-4">
                   <h3 className="text-2xl font-semibold mb-2">Посещения на място</h3>
                   <p className="text-slate-500 leading-6">Вашият гледач идва в дома ви, за да си играе с домашните ви любимци, да им сипе храна или да им почисти тоалетната.</p>
@@ -130,15 +130,15 @@ export default function Home() {
                 </div>
                 {/* Step 4 */}
                 <div className='text-center lg:text-left'>
-                  <button className="bg-green-2 text-white p-4 rounded mt-5 hover:bg-green-700">Намерете гледач</button>
+                  <button className="bg-green-2 text-white p-4 rounded mt-5 hover:bg-teal-700">Намерете гледач</button>
                 </div>
               </div>
             </div>
         </section>
 
         {/* 4 Line Break Banner */}
-        <div className="bg-gold p-8 text-white mb-12">
-          <h1 className="text-3xl text-center pt-2 mb-7">Резервирайте <span className="text-red-2 font-semibold">доверени гледачи и разхождачи</span> които ще се отнасят към вашия домашен любимец като към семейство</h1>
+        <div className="bg-green-2 p-8 text-white mb-12">
+          <h1 className="text-3xl text-center pt-2 mb-7">Резервирайте <span className="text-gold font-semibold">доверени гледачи и разхождачи</span> които ще се отнасят към вашия домашен любимец като към семейство</h1>
         </div>
 
         {/* 5 Our advantages */}
@@ -201,7 +201,7 @@ export default function Home() {
               <div className="relative">
                 <FontAwesomeIcon icon={faQuoteLeft} style={{ position: "absolute", left:-30, top: 10, fontSize: 30 }}/>
                 <p className="my-5 ">Наскоро използвахме PetSit за нашата котка и бяхме много впечатлени от услугата. Гледачката беше дружелюбна, професионална и се грижеше отлично за котката ни, докато отсъствахме. Ежедневно си пишехме и ни изпращаше снимки, което беше много приятно. Горещо препоръчваме!</p>
-                <FontAwesomeIcon icon={faQuoteRight} style={{ position: "absolute", right: -20, bottom: 10, fontSize: 30 }}/>
+                <FontAwesomeIcon icon={faQuoteRight} style={{ position: "absolute", right: -30, bottom: 10, fontSize: 30 }}/>
               </div>
               <p className="text-lg font-bold">Виктор Георгиев</p>
             </div>

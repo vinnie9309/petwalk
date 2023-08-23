@@ -5,7 +5,7 @@ import { Providers } from './redux/providers';
 import localFont from '@next/font/local';
 
 export const metadata = {
-  title: 'Petwalk',
+  title: 'Petsit',
   description: 'Your pet will be walked',
 }
 
@@ -21,7 +21,9 @@ const poppins = localFont({
     }
   ],
   variable: '--font-montserrat'
-})
+});
+
+console.log(poppins);
 
 export default function RootLayout({
   children,

@@ -12,7 +12,10 @@ const FindSitters = () => {
     const userImageLisRef = ref( storage, "/profileImages" );
 
     useEffect( () => {
-        getUsers('sitters').then( res => setStoreUsers(res) );
+        getUsers('sitters').then( res => {
+            console.log(res);
+            return setStoreUsers(res) 
+        } );
 
         listAll(userImageLisRef).then(res => {
             res.items.forEach( item => {

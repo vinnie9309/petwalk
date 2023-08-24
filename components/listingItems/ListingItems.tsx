@@ -55,16 +55,16 @@ const ListingItems = (props: any) => {
         
 
         return (
-            <div className="flex lg:flex-row flex-col items-center w-full border bg-gray-100 my-5 shadow-lg p-5 rounded-md border-l-4 border-t-0 border-r-0 border-b-0 border-green-2 justify-between" key={user.id}>
+            <div className="flex lg:flex-row flex-col items-center w-full border bg-slate-200 my-5 shadow-lg p-5 rounded-md border-l-4 border-t-0 border-r-0 border-b-0 border-green-2" key={user.id}>
                 <div className="p-5">
                     <Image src={ user.userImage === 'default' ? defaultUserImg : user.userImage } alt="user profile image" width="70" height="40" />
                 </div>
-                <div className="pb-3">
-                    <h1 className="text-2xl font-medium">{user.name}</h1>
+                <div className="pb-3 text-grey-2">
+                    <h1 className="text-2xl font-semibold text-green-2">{user.name}</h1>
                     <div>
                         <span>{user.dailyRate}лв на </span>
                         <span>{user.dailyRateOption === 'day' ? 'ден' : 'час'}</span>
-                        <div className="py-5">Избрани квартали:{hoodLabels}</div>
+                        <div className="py-5"><span>Избрани квартали:</span>{hoodLabels}</div>
                         <p>Предлагани услуги: { servicesLabels }</p>
                         <p className="py-5"><span>Oписание: </span>{user.describtion}</p>
                     </div>
@@ -83,15 +83,15 @@ const ListingItems = (props: any) => {
     } );
  
     return (
-        <div className="pt-44 w-full h-full bg-gray-300">
+        <div className="pt-44 w-full h-full bg-grey-2">
             <Header />
             <div className="flex flex-col list-users-inner lg:flex-row mb-10">
-                <div className="flex flex-col shadow-xl bg-gray-100 p-3">
+                <div className="flex flex-col shadow-xl bg-slate-200 p-3 mb-8">
                     <input onChange={handleChange} className="border rounded py-2 pl-3" type="text" placeholder="Търсете по квартал" />
-                    <button className="hover:bg-gray-300 hover:text-black mt-3 border rounded bg-green-2 text-white py-1 text-lg" type="submit" onClick={handleSearch}>Търсене</button>
+                    <button className="hover:bg-teal-700 mt-3 border rounded bg-green-2 text-white py-1 text-lg" type="submit" onClick={handleSearch}>Търсене</button>
                 </div>
-                <div className="w-full lg:ml-20 p-7 border-1 border-black">
-                    <h1 className="text-center text-3xl mb-5">Налични гледачи в избраните квартали</h1>
+                <div className="w-full lg:ml-20 p-7 pt-0 border-1 border-black">
+                    <h1 className="text-center text-3xl mb-8 font-semibold">Налични гледачи в избраните квартали</h1>
                     { mappedUsers }
                 </div>
             </div>

@@ -87,7 +87,7 @@ const SelectHood = (props: any) => {
                 <MultiSelect options={hoodObj} selected={selected} toggleOption={toggleOption} />
              </div>
             <div className="flex w-full">
-                <button onClick={handleSubmit} disabled={ selected.join('').length === 0 } className={`bg-red-400 p-4 w-full text-white text-xl mt-4 rounded ${ selected.join('').length === 0 ? 'disabled' : ''}`}>Завърши регистрация</button>
+                <button onClick={handleSubmit} disabled={ selected.join('').length === 0 } className={`bg-green-2 p-4 w-full text-white text-xl mt-4 rounded ${ selected.join('').length === 0 ? 'disabled' : ''}`}>Завърши регистрация</button>
             </div>
         </form>
     )

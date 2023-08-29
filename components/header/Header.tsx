@@ -1,6 +1,6 @@
 'use client';
 import Link from "next/link";
-import logo from '../../public/assets/images/logo.png';
+import logo from '../../public/assets/images/logo-footer.png';
 import Image from "next/image";
 import './Header.css';
 import { useDispatch, useSelector } from "react-redux";
@@ -28,11 +28,12 @@ const Header = () => {
     
     return (
         <header className="shadow-md fixed bg-white z-50 top-0 text-center w-full grid">
-            <nav className="flex items-center md:flex-row w-full justify-between py-2  max-w-6xl justify-self-center">
-                <div className="w-[140px]">
-                    <Link href="/"><Image src={logo} alt="pesitter logo" height="100" width="140" /></Link>
-                </div>
-                <div className={`${hideMenu ? 'hidden' : 'flex'} absolute md:relative md:top-[0px] top-[80px] h-[calc(100vh-80px)] md:h-auto md:flex flex-col md:bg-white bg-primary-gray w-full md:flex-row md:items-center text-center md:justify-between lg:whitespace-nowrap`}>
+            <nav className="flex items-center md:flex-row w-full justify-between py-5 justify-self-center">
+                <div className={`${hideMenu ? 'hidden' : 'flex'} absolute md:relative md:top-[0px] top-[80px] h-[calc(100vh-80px)] md:h-auto md:flex flex-col md:bg-white bg-primary-gray w-full md:flex-row md:items-center text-center items-center justify-evenly lg:justify-evenly lg:whitespace-nowrap`}>
+                    <div className="w-[140px]">
+                        <Link href="/"><Image src={logo} alt="pesitter logo" height="100" width="140" /></Link>
+                    </div>
+
                     <div className="flex items-center text-xl md:text-lg lg:text-xl flex-col md:flex-row md:justify-between md:[&>*]:mx-4">
                         <Link href="/becomeSitter" className="nav-link pb-1 relative group">Станете Гледач</Link>
                         <Link href="/findSitters" className="nav-link pb-1 relative">Намерете Гледач</Link>

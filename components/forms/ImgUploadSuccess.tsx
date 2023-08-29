@@ -10,7 +10,7 @@ const ImgUploadSuccess = (props: any) => {
             <p>Това е отличен начин да създадете добро първо впечатление. Снимката ви ще се показва в личният ви профил, резултатите от търсенето и във входящата поща.</p>
 
             <div className="flex w-full">
-                <button onClick={handleClick} className="bg-red-400 p-4 w-full text-white mt-4 rounded">Напред</button>
+                <button onClick={handleClick} className="bg-green-2 p-4 w-full text-white mt-4 rounded">Напред</button>
             </div>
         </div>
     )

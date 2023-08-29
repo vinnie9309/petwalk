@@ -35,15 +35,15 @@ const RegisterOpitons = (props: any) => {
             <h1 className="text-2xl text-center mb-5">Какво търсите?</h1>
             <div>
                 <input onClick={sitterHandler} type="radio" className="invisible" id="sitter" name="sitter" />
-                <label className={`block w-full py-2 pl-5 cursor-pointer border-2 border-black rounded ${ clickedSitter ? 'border-red-500' : '' } `} htmlFor="sitter">Търся работа като гледач</label>
+                <label className={`block w-full py-2 pl-5 cursor-pointer border-2 border-black rounded ${ clickedSitter ? 'border-green-2' : '' } `} htmlFor="sitter">Търся работа като гледач</label>
             </div>
 
             <div>
                 <input onClick={ownerHandler} type="radio" className="invisible" id="LFsitter" name="sitter" />
-                <label className={`block w-full py-2 pl-5 cursor-pointer border-2 border-black rounded mb-8 ${ clickedOwner ? 'border-red-500' : '' } `} htmlFor="LFsitter">Търся гледачи</label>
+                <label className={`block w-full py-2 pl-5 cursor-pointer border-2 border-black rounded mb-8 ${ clickedOwner ? 'border-green-2' : '' } `} htmlFor="LFsitter">Търся гледачи</label>
             </div>
             <div className="flex w-full">
-                <button className={`bg-red-400 p-4 w-full text-white mt-4 rounded  ${ nextDisabled ? 'disabled' : '' }`}>Напред</button>
+                <button className={`bg-green-2 p-4 w-full text-white mt-4 rounded  ${ nextDisabled ? 'disabled' : '' }`}>Напред</button>
             </div>
         </form>
     )   

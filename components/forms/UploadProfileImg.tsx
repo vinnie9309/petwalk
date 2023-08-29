@@ -56,11 +56,11 @@ const UploadProfileImg = (props: any) => {
 
     return (
         uploadingImg ?
-        <h1 className='text-center'>Loading...</h1> 
+        <h1 className='text-center'>Зареждане...</h1> 
         :
         <form onSubmit={handleSubmit}>
             <h1 className="font-semibold text-2xl text-center mb-5">Добавете профилна снимка</h1>
-            <p className='text-center text-slate-500 mb-5'>{`Добавете снимка, за да увеличите шансовете си за намиране на ${ petSitter ? 'работа.' : 'гледачи' } `}</p>
+            <h3 className='text-center text-slate-500 font-semibold mb-5'>{`Добавете снимка, за да увеличите шансовете си за намиране на ${ petSitter ? 'работа.' : 'гледачи' } `}</h3>
             <div className='flex justify-evenly mb-5'>
                 <Image src={man} height="120" width="80" alt="man smiling" />
                 <Image src={man2} height="120" width="80" alt="man smiling" />
@@ -76,7 +76,7 @@ const UploadProfileImg = (props: any) => {
             </div>
             <div className="flex flex-col w-full">
                 <input type="file" name="myImage" onChange={chooseImage} className="mb-5" />
-                <button className="bg-red-400 p-4 w-full text-white text-xl mt-4 rounded">Добави снимка</button>
+                <button className="bg-green-2 p-4 w-full text-white text-xl mt-4 rounded">Добави снимка</button>
                 <button onClick={handleSkipStep} className="bg-slate-300 py-2 w-full text-white text-xl mt-4 rounded">Пропусни</button>
             </div>
         </form>

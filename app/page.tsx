@@ -88,7 +88,7 @@ export default function Home() {
                 <FontAwesomeIcon icon={faHouseCircleCheck} style={{ fontSize: 30, color: "#48A9A6" }}/>
                 <div className="ml-4">
                   <h3 className="text-2xl font-semibold mb-2">Посещения на място</h3>
-                  <p className="text-slate-500 leading-6">Вашият гледач идва в дома ви, за да си играе с домашните ви любимци, да им сипе храна или да им почисти тоалетната.</p>
+                  <p className="text-slate-500 leading-6">Вашият гледач идва в дома ви, за да си играе с домашните ви любимци, да ги нахрани или да почисти тоалетната им.</p>
                 </div>
               </div>
             </div>
@@ -159,7 +159,7 @@ export default function Home() {
                 <Image src={dollar} height="60" width="40" alt="geolocation pin icon" className="mr-5" />
                 <div>
                   <h3 className='text-2xl font-semibold mb-2'>Лесно намиране на подходящ гледач</h3>
-                  <p className='text-slate-500 leading-6'>С помощта на различни опции за филтриране и нашата уникална платформа за търсене, ви показваме най-подходящите гледачи на домашни любимци. Независимо дали става дума за космат, пернат или люспест приятел, ние имаме подходящата опция за вас!</p>
+                  <p className='text-slate-500 leading-6'>С помощта на различни опции за филтриране и нашата уникална платформа за търсене, ви предлагаме най-подходящите гледачи на домашни любимци. Независимо дали става дума за космат, пернат или люспест приятел, ние имаме подходящата опция за вас!</p>
                 </div>
               </div>
 

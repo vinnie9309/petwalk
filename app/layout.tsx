@@ -23,8 +23,6 @@ const poppins = localFont({
   variable: '--font-montserrat'
 });
 
-console.log(poppins);
-
 export default function RootLayout({
   children,
 }: {

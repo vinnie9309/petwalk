@@ -80,15 +80,6 @@ const Help = () => {
           </div>
         </div>
       </div>
-
-      <div className="grid grid-cols-max">
-        <h2 className="grid grid-col-1">GRID TESTING</h2>
-        <div className="grid grid-cols-2">
-          <div>Column 1</div>
-          <div>Column 2</div>
-        </div>
-      </div>
-
       <Footer />
     </>
   )

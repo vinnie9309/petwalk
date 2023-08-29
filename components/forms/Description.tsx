@@ -35,7 +35,7 @@ const Description = (props: any) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            { <h1 className="text-2xl text-center mb-5">{ petSitter ? 'Опишете услугите които предлагате накратко' : 'Опишете услугите от които сте заинтересовани накратко' }</h1> }
+            { <h1 className="text-2xl font-semibold text-center mb-5">{ petSitter ? 'Опишете услугите които предлагате накратко' : 'Опишете услугите от които сте заинтересовани накратко' }</h1> }
             <div className="flex flex-col mb-5">
                  <label htmlFor="selfDescribe" className="text-lg mb-2">Опишете кой сте и от какви услуги се интересувате</label>
                  <textarea onChange={selfDescribe} className="border rounded py-2 pl-3" id="selfDescribe" />
@@ -70,7 +70,7 @@ const Description = (props: any) => {
              </div>
 
             <div className="flex w-full">
-                <button disabled={ nextDisabled } className={`bg-red-400 p-4 w-full text-white mt-4 rounded ${nextDisabled ? 'disabled' : ''}`}>Напред</button>
+                <button disabled={ nextDisabled } className={`bg-green-2 p-4 w-full text-white mt-4 rounded ${nextDisabled ? 'disabled' : ''}`}>Напред</button>
             </div>
         </form>
     )

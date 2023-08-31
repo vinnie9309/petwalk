@@ -33,6 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable} font-sans`}>
       <head>
+      <meta name="facebook-domain-verification" content="ger2jyve3tgoqmy40yxi97gfpq46wv" />
         <Script 
           id="fb-pixel" 
           strategy='afterInteractive'

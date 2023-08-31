@@ -34,7 +34,7 @@ export default function Home() {
           <div className='flex flex-col items-center lg:w-6/12'>
             <h1 className="text-3xl lg:text-4xl text-white text-center mb-7">Резервирайте <span className="text-gold font-semibold">доверени гледачи и разхождачи</span> които ще се отнасят към вашия домашен любимец като към семейство</h1>
             <p className="leading-6 text-grey-1 mb-7 text-base">Вече повече от 1 000 души използват PetSit.bg за да се грижат за домашните си любимци по време на дните в офиса или при пътувания</p>
-            <button className="bg-gold text-white p-4 rounded hover:bg-white hover:text-black">Намерете гледач</button>
+            <Link href="/register/regOptions" className="bg-gold text-white p-4 rounded hover:bg-white hover:text-black">Намерете гледач</Link>
             <Link href="/register/regOptions" className="underline text-lg text-white my-5 font-semibold">Търсите работа като гледач на домашни любимци?</Link>
           </div>
 
@@ -130,7 +130,7 @@ export default function Home() {
                 </div>
                 {/* Step 4 */}
                 <div className='text-center lg:text-left'>
-                  <button className="bg-green-2 text-white p-4 rounded mt-5 hover:bg-teal-700">Намерете гледач</button>
+                <Link href="/register/regOptions" className="bg-green-2 text-white p-4 rounded mt-5 hover:bg-teal-700">Намерете гледач</Link>
                 </div>
               </div>
             </div>

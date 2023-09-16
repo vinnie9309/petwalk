@@ -16,7 +16,7 @@ import ladyDog from '../public/assets/images/home-second.png';
 import dollar from '../public/assets/images/icons/dollar-tag.svg';
 import pin from '../public/assets/images/icons/geo-locator.svg';
 import list from '../public/assets/images/icons/list.png';
-import man from '../public/assets/images/man-1.png';
+import man from '../public/assets/images/white-male1.png';
 import man2 from '../public/assets/images/man-2.png';
 import woman from '../public/assets/images/woman.png';
 import Header from '../components/header/Header';

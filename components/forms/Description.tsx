@@ -16,12 +16,12 @@ const Description = (props: any) => {
 
     const selfDescribe = (event: any) => {
         setSelfDescribeVal(event.target.value);
-        setNextDisabled(event.target.value === 0);
+        setNextDisabled( event.target.value === '' || jobDescribeVal === '' );
     }
 
     const jobDescription = (event: any) => {
         setJobDescribeVal(event.target.value);
-        setNextDisabled(event.target.value === 0);
+        setNextDisabled( event.target.value === '' || selfDescribeVal === '' );
     }
     
     const handleSubmit = (event: any) => {

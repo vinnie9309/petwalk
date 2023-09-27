@@ -57,7 +57,7 @@ const ListingItems = (props: any) => {
         return (
             <div className="flex lg:flex-row flex-col items-center w-full border bg-slate-200 my-5 shadow-lg p-5 rounded-md border-l-4 border-t-0 border-r-0 border-b-0 border-green-2" key={user.id}>
                 <div className="p-5">
-                    <Image src={ user.userImage === 'default' ? defaultUserImg : user.userImage } alt="user profile image" width="70" height="40" />
+                    <Image src={ user.userImage === 'default' ? defaultUserImg : user.userImage } alt="user profile image" width="90" height="50" />
                 </div>
                 <div className="pb-3 text-grey-2">
                     <h1 className="text-2xl font-semibold text-green-2">{user.name}</h1>

@@ -27,6 +27,10 @@ a {
   text-decoration: none;
 }
 
+.border-3 {
+  border-width: 3px;
+}
+
 .bg-red-2 {
   background-color: #FE6D73;;
 }
@@ -40,9 +44,12 @@ a {
 }
 
 .bg-gold-outline {
-  background-color: white;
   border-color: #D4B483;
-  color: black;
+}
+
+.bg-gold-outline:hover {
+  background-color: #FFCB77;
+  color: #000;
 }
 
 .bg-grey-1 {

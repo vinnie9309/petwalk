@@ -20,7 +20,7 @@ const ServicesSelect = (props: any) => {
      const getState: any = useSelector<getStoreData>( state => state.dataStore.data );
      
      useEffect( () => {
-        setPetsitter(getState.find( (item: any): any => item['regOption'] ).regOption === 'sitter');
+        setPetsitter(getState.find( (item: any) => item['regOption'] ).regOption === 'sitter');
     }, [] );
 
     // TODO: Fix all the types here
@@ -107,7 +107,7 @@ const ServicesSelect = (props: any) => {
                         <span>
                             <FontAwesomeIcon icon={ !selected.walkerHome ? faCircle : faCircleCheck} style={{ fontSize: 30, color: "#48A9A6" }}/>
                         </span>
-                        <span className="ml-4">Гледане в дома на водача</span>
+                        <span className="ml-4">Гледане в дома на гледача</span>
                         <input type="checkbox" id="walkerHome" name="walkerHome" value="walkerHome" onChange={handleCheck} className="opacity-0" />
                     </label>
                 </div>

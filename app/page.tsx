@@ -34,7 +34,10 @@ export default function Home() {
           <div className='flex flex-col items-center lg:w-6/12'>
             <h1 className="text-3xl lg:text-4xl text-white text-center mb-7">Резервирайте <span className="text-gold font-semibold">доверени гледачи и разхождачи</span> които ще се отнасят към вашия домашен любимец като към семейство</h1>
             <p className="leading-6 text-grey-1 mb-7 text-base">Вече повече от 1 000 души използват PetSit.bg за да се грижат за домашните си любимци по време на дните в офиса или при пътувания</p>
-            <Link href="/register/regOptions" className="bg-gold text-white p-4 rounded hover:bg-white hover:text-black">Намерете гледач</Link>
+            <div className='lg:my-5 max-sm:flex max-sm:flex-col text-center'>
+              <Link href="/register/regOptions" className="sm:mr-5 bg-gold max-sm:mb-3 text-white p-5 rounded hover:bg-white hover:text-black">Намерете гледач</Link>
+              <Link href="/findSitters" className="bg-transparent text-white border-3 bg-gold-outline p-4 rounded">Разгледайте гледачите</Link>
+            </div>
             <Link href="/register/regOptions" className="underline text-lg text-white my-5 font-semibold">Търсите работа като гледач на домашни любимци?</Link>
           </div>
 
@@ -103,34 +106,35 @@ export default function Home() {
               <div className='m-auto'>
                 <Image src={dogWoman} width="500" alt="woman hugging a dog" />
               </div>
-              <div className="flex flex-col mt-8 justify-evenly lg:ml-16">
-                {/* Step 1 */}
-                <div className='mb-5'>
-                  <div className="flex items-center mb-3">
-                    <span className="circle-border mr-3">1</span>
-                    <h3 className="text-2xl font-semibold">Кажете ни от какво се нуждаете</h3>
+              <div className="flex flex-col">
+                <div className='mb-10'>
+                  {/* Step 1 */}
+                  <div className='mb-5'>
+                    <div className="flex items-center mb-3">
+                      <span className="circle-border mr-3">1</span>
+                      <h3 className="text-2xl font-semibold">Кажете ни от какво се нуждаете</h3>
+                    </div>
+                    <p className="text-slate-500">Помогнете ни да разберем какво търсите, като отговорите на няколко прости въпроса.</p>
                   </div>
-                  <p className="text-slate-500">Помогнете ни да разберем какво търсите, като отговорите на няколко прости въпроса.</p>
-                </div>
-                {/* Step 2 */}
-                <div className='mb-5'>
-                  <div className="flex items-center mb-3">
-                    <span className="circle-border mr-3">2</span>
-                    <h3 className="text-2xl font-semibold">Разгледайте най-добрите си съвпадения</h3>
+                  {/* Step 2 */}
+                  <div className='mb-5'>
+                    <div className="flex items-center mb-3">
+                      <span className="circle-border mr-3">2</span>
+                      <h3 className="text-2xl font-semibold">Разгледайте най-добрите си съвпадения</h3>
+                    </div>
+                    <p className="text-slate-500 max-w-2xl">Сравнете гледачите на домашни любимци близо до вас по отношение на тяхната гъвкавост, цени и опит. След това поговорете с тези, които са ви харесали.</p>
                   </div>
-                  <p className="text-slate-500 max-w-2xl">Сравнете гледачите на домашни любимци близо до вас по отношение на тяхната гъвкавост, цени и опит. След това поговорете с тези, които са ви харесали.</p>
-                </div>
-                {/* Step 3 */}
-                <div className='mb-5'>
-                  <div className="flex items-center mb-3">
-                    <span className="circle-border mr-3">3</span>
-                    <h3 className="text-2xl font-semibold">Наемете най-добрият гледач</h3>
+                  {/* Step 3 */}
+                  <div>
+                    <div className="flex items-center mb-3">
+                      <span className="circle-border mr-3">3</span>
+                      <h3 className="text-2xl font-semibold">Наемете най-добрият гледач</h3>
+                    </div>
+                    <p className="text-slate-500">Насрочете час с избрания от вас гледач на домашни любимци и можете да започнете. Толкова е просто!</p>
                   </div>
-                  <p className="text-slate-500">Насрочете час с избрания от вас гледач на домашни любимци и можете да започнете. Толкова е просто!</p>
                 </div>
-                {/* Step 4 */}
                 <div className='text-center lg:text-left'>
-                <Link href="/register/regOptions" className="bg-green-2 text-white p-4 rounded mt-5 hover:bg-teal-700">Намерете гледач</Link>
+                  <Link href="/register/regOptions" className="bg-green-2 text-white p-4 rounded mt-5 hover:bg-teal-700">Намерете гледач</Link>
                 </div>
               </div>
             </div>

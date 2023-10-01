@@ -11,7 +11,6 @@ const Description = (props: any) => {
 
     useEffect( () => {
        setPetsitter(getState.find( (item: any): any => item['regOption'] ).regOption === 'sitter');
-       console.log(getState);
    }, [getState] );
 
     const selfDescribe = (event: any) => {
@@ -24,7 +23,6 @@ const Description = (props: any) => {
         props.handleData({
             selfDescribeVal
         });
-        console.log(petSitter);
         petSitter ? props.nextFormStep() : props.nextFormStep('skip');
     }
 

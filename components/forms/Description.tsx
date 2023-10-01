@@ -7,11 +7,12 @@ const Description = (props: any) => {
     const [ selfDescribeVal, setSelfDescribeVal ] = useState('')
     const [ nextDisabled, setNextDisabled ] = useState(true);
     const [ petSitter, setPetsitter ] = useState(false);
-
     const getState: any = useSelector<getStoreData>( state => state.dataStore.data );
+
     useEffect( () => {
        setPetsitter(getState.find( (item: any): any => item['regOption'] ).regOption === 'sitter');
-   }, [] );
+       console.log(getState);
+   }, [getState] );
 
     const selfDescribe = (event: any) => {
         setSelfDescribeVal(event.target.value);
@@ -23,7 +24,8 @@ const Description = (props: any) => {
         props.handleData({
             selfDescribeVal
         });
-        props.nextFormStep();
+        console.log(petSitter);
+        petSitter ? props.nextFormStep() : props.nextFormStep('skip');
     }
 
     return (

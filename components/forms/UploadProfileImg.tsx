@@ -32,7 +32,7 @@ const UploadProfileImg = (props: any) => {
                 })
             } )
         });
-    }, [] );
+    }, [userImageLisRef, getState] );
 
     const handleSkipStep = (event: any) => {
         event.preventDefault();

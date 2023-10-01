@@ -21,7 +21,7 @@ const ServicesSelect = (props: any) => {
      
      useEffect( () => {
         setPetsitter(getState.find( (item: any) => item['regOption'] ).regOption === 'sitter');
-    }, [] );
+    }, [getState] );
 
     // TODO: Fix all the types here
     const handleCheck = (event: any) => {

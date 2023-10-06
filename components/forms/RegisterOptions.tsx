@@ -1,14 +1,16 @@
 'use client';
 import { useState } from "react";
-import { useDispatch } from "react-redux";
 import './Forms.css';
 
+interface SitterData {
+    regOption: string;
+}
+
 const RegisterOpitons = (props: any) => {
-    const [ sitterOption, setSitterOption ] = useState({});
+    const [ sitterOption, setSitterOption ] = useState<SitterData>();
     const [ clickedSitter, setClickedSitter ] = useState(false);
     const [ clickedOwner, setClickedOwner ] = useState(false);
     const [ nextDisabled, setNextDisabled ] = useState(true);
-    const dispatch = useDispatch();
     
     const sitterHandler = () => {
         setSitterOption({ regOption: 'sitter'});
@@ -27,7 +29,11 @@ const RegisterOpitons = (props: any) => {
     const handleSubmit = ( event: any ) => {
         event.preventDefault();
         props.handleData(sitterOption);
-        props.nextFormStep();
+        if( sitterOption?.regOption === 'owner' ) {
+            props.nextFormStep('owner');
+        } else {
+            props.nextFormStep();
+        }
     }
 
     return (

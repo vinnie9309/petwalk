@@ -28,14 +28,16 @@ const RegisterSteps = () => {
             setOwnerStep(() => ownerStep + 1);
             //Hiding the form for sitters
             setFormStep(99);
-        } else {
+        } 
+        else if ( manualStep === 'ownerSkip' ) setOwnerStep(() => ownerStep + 2);
+        else {
             setFormStep( () => {
                 if ( manualStep === 'skip' ) return formStep + 2;
                 return formStep + 1;
             } );
         }
     }
-    
+
     const handlePersonalData = (value: any) => {
         // Sending the data to redux store on every separate step
         dispatch(storeActions.storeData(value));
@@ -47,18 +49,20 @@ const RegisterSteps = () => {
                 <div className="flex justify-center">
                     <Image src={logo} height="160" width="120" alt="site logo" />
                 </div>
-                { formStep === 0 && <RegisterOpitons nextFormStep={nextFormStep} handleData={handlePersonalData} /> }
-                {/* If owner selected move to owner steps */}
+                {/* Additional step only for owners */}
                 { ownerStep === 1 && <OwnerCombined nextFormStep={nextFormStep} handleData={handlePersonalData} />  }
+                {/* Steps for sitters */}
+                { formStep === 0 && <RegisterOpitons nextFormStep={nextFormStep} handleData={handlePersonalData} /> }
                 { formStep === 1 && <PersonalInfo nextFormStep={nextFormStep} handleData={handlePersonalData} />  }
                 { formStep === 2 && <ContactInfo nextFormStep={nextFormStep} handleData={handlePersonalData} /> }
                 { formStep === 3 && <ServicesSelect nextFormStep={nextFormStep} handleData={handlePersonalData} /> }
                 { formStep === 4 && <DailyRate nextFormStep={nextFormStep} handleData={handlePersonalData} /> }
+                {/* Second step for owners */}
                 { (formStep === 5 || ownerStep === 2) && <UploadProfileImg nextFormStep={nextFormStep} handleData={handlePersonalData} /> }
                 { (formStep === 6 || ownerStep === 3) && <ImgUploadSuccess nextFormStep={nextFormStep} /> }
                 { formStep === 7 && <Description nextFormStep={nextFormStep} handleData={handlePersonalData} /> }
                 { formStep === 8 && <SelectHood nextFormStep={nextFormStep} handleData={handlePersonalData} /> }
-                { formStep === 9 && <RegistrationComplete /> }
+                { (formStep === 9 || ownerStep === 4) && <RegistrationComplete /> }
             </div>
             <div className='w-full text-left'>
                 <Link href="/">

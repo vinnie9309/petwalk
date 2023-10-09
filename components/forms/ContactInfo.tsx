@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 const ContactInfo = (props: any) => {
-    const [ mailVal, setMailVal ] = useState('')
+    const [ mailVal, setMailVal ] = useState('');
     const [ emailValidation, setEmailValidation ] = useState(false);
     const [ phoneVal, setPhoneVal ] = useState('');
     const [ nextDisabled, setNextDisabled ] = useState(true);

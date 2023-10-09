@@ -1,3 +1,4 @@
+'use client';
 import man from '../../public/assets/images/man-1.png';
 import man2 from '../../public/assets/images/man-2.png';
 import woman from '../../public/assets/images/woman.png';
@@ -14,13 +15,9 @@ const UploadProfileImg = (props: any) => {
     const [ uploadingImg, setUploadingImg ] = useState(false);
     const [ userImageUrl, setUserImageUrl ] = useState('');
     const [ petSitter, setPetsitter ] = useState(false);
-    const getState: any = useSelector<getStoreData>( state => state.dataStore.data );
+    const [ nextDisabled, setNextDisabled ] = useState(true);
     const userImageLisRef = ref( storage, "/profileImages" );
-
-    const chooseImage = (event: any) => {
-        setSelectedImg( event.target.files[0]);
-        if ( selectedImg === null ) return;
-    }
+    const getState: any = useSelector<getStoreData>( state => state.dataStore.data );
     
     useEffect( () => {
         setPetsitter(getState.find( (item: any): any => item['regOption'] ).regOption === 'sitter');
@@ -29,34 +26,41 @@ const UploadProfileImg = (props: any) => {
             res.items.forEach( item => {
                 getDownloadURL(item).then(url => {
                     setUserImageUrl(url);
-                })
-            } )
+                });
+            });
         });
-    }, [userImageLisRef, getState] );
+    }, [  ] );
+
+    const chooseImage = (event: any) => {
+        setSelectedImg( event.target.files[0] );
+        setNextDisabled(false);
+        
+        if ( selectedImg === null ) return;
+    }
 
     const handleSkipStep = (event: any) => {
         event.preventDefault();
         props.handleData({userImg: 'default'});
-        props.nextFormStep('skip');
+        props.nextFormStep( !petSitter ? 'ownerSkip' : 'skip' );
     }
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const imageRef: any = ref(storage, `profileImages/${selectedImg.name + v4()}`);
         setUploadingImg(true);
-        //Uploading the image to firebase storage and passing the image url to redux
+        // Uploading the image to firebase storage and passing the image url to redux
         uploadBytes(imageRef, selectedImg).then( (snapshot: any): any => {
             getDownloadURL(snapshot.ref).then((url) => {
                 props.handleData({userImg: url});
             });
-            setUploadingImg(false);
-            props.nextFormStep();
         } );
+        setUploadingImg(false);
+        props.nextFormStep( !petSitter ? 'owner' : '');
     }
 
     return (
         uploadingImg ?
-        <h1 className='text-center'>Зареждане...</h1> 
+        <h1 className='text-center'>Зареждане...</h1>
         :
         <form onSubmit={handleSubmit}>
             <h1 className="font-semibold text-2xl text-center mb-5">Добавете профилна снимка</h1>
@@ -76,7 +80,7 @@ const UploadProfileImg = (props: any) => {
             </div>
             <div className="flex flex-col w-full">
                 <input type="file" name="myImage" onChange={chooseImage} className="mb-5" />
-                <button className="bg-green-2 p-4 w-full text-white text-xl mt-4 rounded">Добави снимка</button>
+                <button disabled={ nextDisabled } className={`bg-green-2 p-4 w-full text-white text-xl mt-4 rounded ${nextDisabled ? 'disabled' : ''} `}>Добави снимка</button>
                 <button onClick={handleSkipStep} className="bg-slate-300 py-2 w-full text-white text-xl mt-4 rounded">Пропусни</button>
             </div>
         </form>

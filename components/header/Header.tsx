@@ -35,7 +35,8 @@ const Header = () => {
                     </div>
 
                     <div className="flex items-center text-xl md:text-lg lg:text-xl flex-col md:flex-row md:justify-between md:[&>*]:mx-4">
-                        <Link href="/becomeSitter" className="nav-link pb-1 relative group max-sm:mb-3">Станете Гледач</Link>
+                        {/* Temporary removal 
+                        <Link href="/becomeSitter" className="nav-link pb-1 relative group max-sm:mb-3">Станете Гледач</Link> */}
                         <Link href="/findSitters" className="nav-link pb-1 relative max-sm:mb-3">Намерете Гледач</Link>
                         <Link href="/help" className="nav-link pb-1 relative">Помощ</Link>
                     </div>

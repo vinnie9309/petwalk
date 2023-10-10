@@ -8,18 +8,19 @@ export interface getStoreData {
 }
 
 const RegistrationComplete = () => {
-    const getUserDataState: any = useSelector<getStoreData>( state => state.dataStore.data );
+    const userData: any = useSelector<getStoreData>( state => state.dataStore.data );
     const dispatch = useDispatch();
 
    const handleClick = async () => {
-        if ( getUserDataState.length > 7 ) {
+        const owner: boolean = userData.some( (opt: {regOption: string}) => opt.regOption === 'owner' );
+        if ( userData.length > 7 ) {
             dispatch(storeActions.storeData('clear'));
         }
         // Send the data to the BE when we have reached the final step of registration
-        const response = await fetch('https://petwalker-d43e0-default-rtdb.europe-west1.firebasedatabase.app/petSitters.json', {
+        const response = await fetch(`https://petwalker-d43e0-default-rtdb.europe-west1.firebasedatabase.app/${owner ? 'owners.json' : 'petSitters.json'}`, {
             method: 'POST',
             body: JSON.stringify({
-                sitterData: getUserDataState
+                sitterData: userData
             }),
             headers: {
                 'Content-Type': 'application/json'
@@ -28,8 +29,8 @@ const RegistrationComplete = () => {
 
         const data = await response.json();
         // TODO: Fix types
-        const userEmail = getUserDataState.find( (user:any):any => user['mailVal']).mailVal;
-        const userPassword = getUserDataState.find( (user:any):any => user['passVal']).passVal;
+        const userEmail = userData.find( (user:any):any => user['mailVal']).mailVal;
+        const userPassword = userData.find( (user:any):any => user['passVal']).passVal;
         const { result, error } = await signUp( userEmail, userPassword );
         dispatch(storeActions.setUserLogin(true));
 
@@ -45,7 +46,6 @@ const RegistrationComplete = () => {
             <Link href="/">
                 <button onClick={handleClick} className="bg-green-2 p-4 w-full text-white text-xl mt-4 rounded">Обратно към начална страница</button>
             </Link>
-            {/* TODO: Add a button that leads to different sitters */}
         </div>
     )
 }

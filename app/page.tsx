@@ -27,10 +27,9 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="mt-24">
+      <main className="mt-20">
         {/* 1 First Section - Banner */}
         <section className="flex lg:flex-row flex-col justify-evenly items-center py-20 bg-green-2 mb-12 px-5 lg:px-0">
-
           <div className='flex flex-col items-center lg:w-6/12'>
             <h1 className="text-3xl lg:text-4xl text-white text-center mb-7">Резервирайте <span className="text-gold font-semibold">доверени гледачи и разхождачи</span> които ще се отнасят към вашия домашен любимец като към семейство</h1>
             <p className="leading-6 text-grey-1 mb-7 text-base">Вече повече от 1 000 души използват PetSit.bg за да се грижат за домашните си любимци по време на дните в офиса или при пътувания</p>

@@ -64,11 +64,6 @@ const RegisterSteps = () => {
                 { formStep === 8 && <SelectHood nextFormStep={nextFormStep} handleData={handlePersonalData} /> }
                 { (formStep === 9 || ownerStep === 4) && <RegistrationComplete /> }
             </div>
-            <div className='w-full text-left'>
-                <Link href="/">
-                    <Image src={logo} height="220" width="160" alt="site logo" />
-                </Link>
-            </div>
         </div>
     )
 }

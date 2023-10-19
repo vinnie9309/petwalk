@@ -54,17 +54,17 @@ const OwnerCombined = (props: any) => {
                 { emailValidation && <span className="text-red-500 font-medium mt-2">Моля използвайте валиден имейл адрес</span> }
             </div>
 
-            <div className="flex flex-col">
+            <div className="flex flex-col mb-5">
                 <label htmlFor="owner-phone">Телефонен номер</label>
                 <input onChange={handlePhone} value={phoneVal} className="border rounded py-2 pl-3" id="owner-phone" />
             </div>
 
-            <div className="flex flex-col">
+            <div className="flex flex-col mb-5">
                 <label htmlFor="owner-name">Име</label>
                 <input onChange={handleName} value={nameVal} className="border rounded py-2 pl-3" id="owner-name" />
             </div>
 
-            <div className="flex flex-col">
+            <div className="flex flex-col mb-5">
                 <label htmlFor="owner-pass">Парола</label>
                 <input onChange={handlePass} value={passVal} type="password" className="border rounded py-2 pl-3" id="owner-pass" />
             </div>

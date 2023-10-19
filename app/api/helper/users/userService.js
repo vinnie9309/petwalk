@@ -91,6 +91,17 @@ export async function getUserDataNew() {
     return storeData;
 }
 
+export async function getUser(id) {
+    const db = getDatabase();
+    const starCountRef = ref(db, 'petSitters/' + id );
+    const storeData = [];
+    onValue(starCountRef, (snapshot) => {
+        const data = snapshot.val();
+        storeData.push(data);
+    });
+    return storeData;
+}
+
 //Update the sent message
 export function updateMessage(id, message) {
     const db = getDatabase();

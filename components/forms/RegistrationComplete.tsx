@@ -43,8 +43,8 @@ const RegistrationComplete = () => {
         <div className="flex flex-col justify-center items-center">
             <h1 className="text-2xl mb-5">Готови сте!</h1>
             <p className="text-lg">Сега може да разгледате гледачи и да им изпратите вашата обява за работа!</p>
-            <Link href="/">
-                <button onClick={handleClick} className="bg-green-2 p-4 w-full text-white text-xl mt-4 rounded">Обратно към начална страница</button>
+            <Link href="/findSitters">
+                <button onClick={handleClick} className="bg-green-2 p-4 w-full text-white text-xl mt-4 rounded">Разгледайте разхождачите</button>
             </Link>
         </div>
     )

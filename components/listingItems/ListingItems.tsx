@@ -91,7 +91,7 @@ const ListingItems = (props: any) => {
                     <button className="hover:bg-teal-700 mt-3 border rounded bg-green-2 text-white py-1 text-lg" type="submit" onClick={handleSearch}>Търсене</button>
                 </div>
                 <div className="w-full lg:ml-20 p-7 pt-0 border-1 border-black">
-                    <h1 className="text-3xl mb-5 font-semibold">Налични гледачи в избраните квартали</h1>
+                    <h1 className="text-3xl mb-5 font-semibold max-sm:text-center">Налични гледачи в избраните квартали</h1>
                     <p className="mb-5">Това е демо версия на сайта. За да видите всички гледачи и да може да изпратите съобщение се регистрирайте(напълно безплатно е и става за 1 минута)</p>
                     { mappedUsers }
                 </div>
